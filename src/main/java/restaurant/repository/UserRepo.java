@@ -12,7 +12,7 @@ public class UserRepo {
 	/**
 	 * Cream un entity manager factory cu denumirea <persistence-unit> din persistence.xml (--> a se vedea randul 6).
 	 */
-	private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ro.tutorial.lab.IS"); 
+	private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("restaurant");
 	
     
 	public void insert(User user) {

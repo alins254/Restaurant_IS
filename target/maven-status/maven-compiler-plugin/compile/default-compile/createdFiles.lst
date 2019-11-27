@@ -1,3 +1,11 @@
-ro\utcn\is\lab2\entity\User.class
-ro\utcn\is\lab2\repository\UserRepo.class
-ro\utcn\is\lab2\start\ApplicationStart.class
+restaurant\repository\UserRepo.class
+restaurant\entity\Phone.class
+restaurant\entity\meniu\Meniu.class
+restaurant\messages\Messages.class
+restaurant\entity\Address.class
+restaurant\service\UserService.class
+restaurant\entity\comenzi\Comenzi.class
+restaurant\entity\User.class
+restaurant\start\ApplicationStart.class
+restaurant\entity\personal\Personal.class
+restaurant\entity\stock\Stoc.class

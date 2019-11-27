@@ -3,12 +3,12 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <persistence-unit name="ro.tutorial.lab.IS" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="restaurant" transaction-type="RESOURCE_LOCAL">
         <properties>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/labis"/>
-            <property name="hibernate.connection.username" value="tufi"/>
-            <property name="hibernate.connection.password" value="tufi"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/exe1"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="password"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.connection.autocommit" value="false"/>
             <property name="hibernate.connection.CharSet" value="utf8"/>
@@ -16,6 +16,6 @@
             <property name="hibernate.connection.useUnicode" value="true"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
-        </properties>
+        </properties>               
     </persistence-unit>
 </persistence>
