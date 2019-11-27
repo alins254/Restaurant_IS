@@ -1,6 +1,6 @@
 # Default ignored files
 /workspace.xml
-/.idea
+.idea
 .settings
 .project
 .classpath
