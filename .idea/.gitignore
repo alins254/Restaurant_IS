@@ -1,14 +1,3 @@
+
 # Default ignored files
 /workspace.xml
-# Default ignored files
-/workspace.xml
-
-# Intellij
-.idea
-*.iws
-*.iws
-
-# Eclipse
-.classpath
-.project
-.settings/
