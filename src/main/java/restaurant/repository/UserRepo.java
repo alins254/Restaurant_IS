@@ -14,7 +14,6 @@ public class UserRepo {
 	 */
 	private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("restaurant");
 	
-    
 	public void insert(User user) {
 		/**
 		 * Pentru fiecare metoda se instantiaza un entiy manager din EMF-ul de mai sus.
