@@ -10,10 +10,4 @@ public class Chef implements Personal {
 	private Date dateOfEmployment;
 	private Double salary;
 	List orders;
-
-
-
-
-	
-	
 }
