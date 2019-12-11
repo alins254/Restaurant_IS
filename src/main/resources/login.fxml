@@ -39,6 +39,7 @@
                      <Button layoutX="76.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#onLogin" prefHeight="25.0" prefWidth="62.0" text="Login" />
                      <TextField fx:id="username" layoutX="72.0" layoutY="26.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
                      <PasswordField fx:id="password" layoutX="72.0" layoutY="65.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
+
                   </children></Pane>
                <Text layoutX="105.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="62.09765625">
                   <font>
