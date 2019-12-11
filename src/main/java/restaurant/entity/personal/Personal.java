@@ -2,12 +2,11 @@ package restaurant.entity.personal;
 
 import java.util.Date;
 
-public abstract class Personal {
+public interface Personal {
 
-    private String name;
-    private Date dateOfEmployment;
-    private Double salary;
 
+
+    /*
     public Personal(){
         super();
     }
@@ -33,5 +32,5 @@ public abstract class Personal {
 	public Personal newWaiter(String name, Double salary) {
 		return (Personal)(new Waiter(name, salary));
 	}
-
+ */
 }
