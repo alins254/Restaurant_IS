@@ -37,13 +37,9 @@
                      </Text>
                      <Text layoutX="8.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="55.35351276397705" />
                      <Button layoutX="76.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#onLogin" prefHeight="25.0" prefWidth="62.0" text="Login" />
-<<<<<<< HEAD
                      <TextField fx:id="username" layoutX="72.0" layoutY="26.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
                      <PasswordField fx:id="password" layoutX="72.0" layoutY="65.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
-=======
-                     <TextField layoutX="72.0" layoutY="26.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
-                     <TextField layoutX="72.0" layoutY="65.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
->>>>>>> 2b7e14e9c28fa918c931cba0d58e95c279ca4cb7
+
                   </children></Pane>
                <Text layoutX="105.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="62.09765625">
                   <font>

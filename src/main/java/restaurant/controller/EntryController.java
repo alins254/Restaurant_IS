@@ -73,7 +73,7 @@ public class EntryController implements Initializable {
         Button table = tableId.get(2);
         table.setStyle("-fx-background-color: #00C64F");
         table.setDisable(false);
-        System.out.println("Customer out! Table free." + table.getId());
+        System.out.println("Customer out! Table free." );
     }
 
     @Override
