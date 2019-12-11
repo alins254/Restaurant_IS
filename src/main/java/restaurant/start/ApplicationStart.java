@@ -4,6 +4,7 @@ import restaurant.entity.User;
 import restaurant.service.UserService;
 import javax.swing.*;
 
+
 public class ApplicationStart {
 
 	public static void main(String[] args) {
@@ -14,6 +15,6 @@ public class ApplicationStart {
 		System.out.println(userService.addUser(user));
 
 		new MainLoginFrame();
-		
+
 	}
 }
