@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.MainController">
+<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.LoginController">
    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
       <children>
          <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
@@ -36,9 +36,9 @@
                         </font>
                      </Text>
                      <Text layoutX="8.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="55.35351276397705" />
-                     <Button layoutX="76.0" layoutY="110.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Login" />
-                     <TextField layoutX="72.0" layoutY="26.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="Label" />
-                     <TextField layoutX="72.0" layoutY="65.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="Label" />
+                     <Button layoutX="76.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#onLogin" prefHeight="25.0" prefWidth="62.0" text="Login" />
+                     <TextField layoutX="72.0" layoutY="26.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
+                     <TextField layoutX="72.0" layoutY="65.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
                   </children></Pane>
                <Text layoutX="105.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="62.09765625">
                   <font>

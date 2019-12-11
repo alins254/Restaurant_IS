@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class LoginController implements Initializable {
     private double x, y;
 
     @FXML
@@ -35,6 +35,11 @@ public class MainController implements Initializable {
     public void onHideWindow(MouseEvent event){
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
+    }
+
+    @FXML
+    public void onLogin(MouseEvent event){
+        System.out.println("Success!");
     }
 
     @Override
