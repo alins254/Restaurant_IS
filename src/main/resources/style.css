@@ -1,0 +1,7 @@
+Button:hover{
+    -fx-cursor: hand;
+}
+
+HBox:hover{
+    -fx-cursor: hand;
+}

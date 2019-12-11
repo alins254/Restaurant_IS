@@ -1,11 +1,15 @@
+
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\entity\meniu\Meniu.java
+F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\controller\MainController.java
+F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\start\ApplicationStart.java
+F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\entity\Address.java
+F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\ui\Main.java
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\entity\User.java
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\messages\Messages.java
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\entity\Phone.java
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\entity\personal\Personal.java
-F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\start\ApplicationStart.java
-F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\entity\Address.java
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\entity\stock\Stoc.java
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\repository\UserRepo.java
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\service\UserService.java
 F:\FACULTATE\AN_III\SEMESTRUL_1\IS\Proiect\Restaurant_IS\src\main\java\restaurant\entity\comenzi\Comenzi.java
+

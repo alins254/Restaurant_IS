@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.EntryController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+            <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
+                <children>
+                    <HBox alignment="CENTER_RIGHT" onMouseDragged="#onDragTopBar" onMousePressed="#onPressTopBar" prefHeight="27.0" prefWidth="640.0" style="-fx-background-color: AF0000;" stylesheets="@style.css">
+                        <children>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onHideWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@style.css" text="–">
+                                <HBox.margin>
+                                    <Insets right="1.0" />
+                                </HBox.margin>
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font>
+                            </Button>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onCloseWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@style.css" text="x">
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font></Button>
+                        </children></HBox>
+               <Button layoutX="36.0" layoutY="27.0" mnemonicParsing="false" onMouseClicked="#onTableFree" text="TestLeaveTable" />
+                </children></Pane>
+         <Pane layoutX="14.0" layoutY="74.0" prefHeight="392.0" prefWidth="386.0" style="-fx-background-color: #E5E4E4;">
+            <children>
+               <Pane layoutX="13.0" layoutY="124.0" prefHeight="254.0" prefWidth="361.0" style="-fx-background-color: #FFF;">
+                  <children>
+                      <Button fx:id="table1" layoutX="37.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 1" />
+                      <Button fx:id="table2" layoutX="154.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 2" />
+                      <Button fx:id="table3" layoutX="261.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 3" />
+                      <Button fx:id="table4" layoutX="37.0" layoutY="91.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 4" />
+                      <Button fx:id="table5" layoutX="152.0" layoutY="91.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 5" />
+                      <Button fx:id="table6" layoutX="259.0" layoutY="91.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 6" />
+                      <Button fx:id="table7" layoutX="37.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 7" />
+                      <Button fx:id="table8" layoutX="154.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 8" />
+                      <Button fx:id="table9" layoutX="259.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 9" />
+                      <Button fx:id="table10" layoutX="37.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 10" />
+                      <Button fx:id="table11" layoutX="154.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 11" />
+                      <Button fx:id="table12" layoutX="260.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#onTableSelect" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #00C64F;" text="Table 12" />
+                  </children>
+               </Pane>
+               <Label layoutX="167.0" layoutY="25.0" prefHeight="25.0" prefWidth="52.0" text="Hello!">
+                  <font>
+                     <Font name="Arial" size="18.0" />
+                  </font>
+               </Label>
+               <Label layoutX="57.0" layoutY="69.0" text="Please have a seat at one of the free tables ">
+                  <font>
+                     <Font name="Arial" size="14.0" />
+                  </font>
+               </Label>
+               <Label layoutX="117.0" layoutY="85.0" text="(they are marked with green)" />
+            </children>
+         </Pane>
+         <Pane layoutX="414.0" layoutY="297.0" prefHeight="168.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
+            <children>
+               <Label layoutX="49.0" layoutY="23.0" prefHeight="25.0" prefWidth="120.0" text="Staff member?">
+                  <font>
+                     <Font name="Arial" size="18.0" />
+                  </font>
+               </Label>
+               <Pane layoutX="13.0" layoutY="78.0" prefHeight="70.0" prefWidth="187.0" style="-fx-background-color: #FFF;">
+                  <children>
+                     <Button layoutX="50.0" layoutY="23.0" mnemonicParsing="false" onMouseClicked="#onRedirectLogin" prefHeight="25.0" prefWidth="96.0" text="Go to Login" />
+                  </children>
+               </Pane>
+               <Label layoutX="58.0" layoutY="70.0">
+                  <font>
+                     <Font name="Arial" size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </Pane>
+         <Pane layoutX="414.0" layoutY="74.0" prefHeight="207.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
+            <children>
+               <ImageView fitHeight="272.0" fitWidth="195.0" layoutX="10.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@logo_bucatar.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </Pane>
+        </children>
+    </AnchorPane>
+</VBox>
