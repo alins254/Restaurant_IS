@@ -14,12 +14,6 @@ public class ApplicationStart {
 		System.out.println(userService.addUser(user));
 
 		new MainLoginFrame();
-
-//		 UserService userService = new UserService();
-//		 User user = new User();
-//		 user.setAge(18);
-//		 user.setName("Tufisi");
-//		 System.out.println(userService.addUser(user));
 		
 	}
 }
