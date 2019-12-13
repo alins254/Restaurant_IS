@@ -1,6 +1,5 @@
 package restaurant.service;
 
-
 import restaurant.repository.LoginRepo;
 
 public class LoginService {

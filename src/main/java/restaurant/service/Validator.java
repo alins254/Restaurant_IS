@@ -1,5 +1,4 @@
 package restaurant.service;
-
 import restaurant.entity.personal.Personal;
 
 public class Validator {
@@ -34,9 +33,4 @@ public class Validator {
             return true;
         return false;
     }
-
-
-
-
-
 }
