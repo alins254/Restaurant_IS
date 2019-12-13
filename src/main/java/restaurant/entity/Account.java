@@ -1,5 +1,6 @@
 package restaurant.entity;
 
+<<<<<<< HEAD
 import restaurant.entity.personal.Personal;
 
 import javax.persistence.Column;
@@ -30,6 +31,7 @@ public class Account {
         return username;
     }
 
+
     public String getPassword() {
         return password;
     }
@@ -37,6 +39,7 @@ public class Account {
     public void setUsername(String username) {
         this.username = username;
     }
+
 
     public void setPassword(String password) {
         this.password = password;

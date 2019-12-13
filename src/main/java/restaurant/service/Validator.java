@@ -1,6 +1,5 @@
 package restaurant.service;
 
-
 import restaurant.entity.personal.Personal;
 
 public class Validator {
