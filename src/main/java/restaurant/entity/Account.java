@@ -1,27 +1,43 @@
 package restaurant.entity;
 
-public class Account {
-    private String username;
-    private String role;
+import restaurant.entity.personal.Personal;
 
-    public Account(String username, String role) {
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+public class Account {
+    @Id
+    private String id;
+
+    @Column
+    private String username;
+    @Column
+    private String password;
+
+    @OneToOne
+    @JoinColumn(name = "person")
+    private Personal person;
+
+    public Account(String username, String password) {
         this.username = username;
-        this.role = role;
+        this.password = password;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public String getRole() {
-        return role;
+    public String getPassword() {
+        return password;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
