@@ -1,6 +1,7 @@
 package restaurant.start;
 
 import restaurant.entity.User;
+import restaurant.entity.personal.Invoice;
 import restaurant.entity.personal.Personal;
 import restaurant.entity.*;
 import restaurant.entity.personal.Waiter;
@@ -24,7 +25,7 @@ public class ApplicationStart {
 		*/
 
 
-
+		/*
 		Personal p;
 		Waiter w = new Waiter();
 		System.out.println(w.getName());
@@ -55,6 +56,10 @@ public class ApplicationStart {
 
 		Date d = new Date();
 		System.out.println(d);
+		*/
+
+		Invoice i = new Invoice();
+		i.generate();
 
 	}
 }
