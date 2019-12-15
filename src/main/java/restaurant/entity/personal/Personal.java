@@ -1,4 +1,7 @@
 package restaurant.entity.personal;
 
-public class Personal {
+import java.util.Date;
+
+public interface Personal {
+
 }
