@@ -46,6 +46,5 @@ public class Invoice {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-
     }
 }
