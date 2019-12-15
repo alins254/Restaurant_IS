@@ -7,10 +7,12 @@ public class Stock {
     private List<ItemQuantity> stock;
 
     public Stock(){
+
         this.stock = new ArrayList<>();
     }
 
     public Stock(List<ItemQuantity>stock){
+
         this.stock = stock;
     }
 
