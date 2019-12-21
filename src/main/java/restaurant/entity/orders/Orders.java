@@ -6,15 +6,15 @@ import java.util.List;
 import restaurant.entity.menu.Menu;
 import restaurant.entity.personal.Waiter;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class Orders {
 
 	@Id
 	private String id;
 
-	@Column
+	@Transient
 	private Waiter waiter;
 
 	@Column
@@ -27,6 +27,7 @@ public class Orders {
 	private Date placedAt;
 
 //	@ManyToMany(mappedBy = "order",fetch = FetchType.EAGER)
+	@Transient
 	private List<Menu> menuItems;
 
 	public Orders() {}
@@ -43,6 +44,8 @@ public class Orders {
 
 	public void setTable(Integer table) {this.table = table;}
 
+//	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Waiter.class)
+//	@JoinColumn(name="waiter_id")
 	public Waiter getWaiter() {return waiter;}
 
 	public void setWaiter(Waiter waiter) {this.waiter = waiter;}

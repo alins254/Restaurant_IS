@@ -1,5 +1,4 @@
 package restaurant.service;
-import javax.persistence.*;
 import restaurant.entity.personal.Waiter;
 
 public class Table {
