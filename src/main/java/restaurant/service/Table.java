@@ -5,14 +5,11 @@ public class Table {
 
     private String id;
     private Waiter waiter;
-    private boolean isOccupied;
+    private boolean isOccupied = false;
 
     public Table(){}
 
-    public Table(Waiter waiter) {
-        this.waiter = waiter;
-        this.isOccupied = false;
-    }
+    public Table(Waiter waiter) {this.waiter = waiter;}
 
     public String getId(){return id;}
 
