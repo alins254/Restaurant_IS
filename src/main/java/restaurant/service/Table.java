@@ -15,7 +15,7 @@ public class Table {
 
     public Waiter getWaiter(){return waiter;}
 
-    public void setWaiter(Waiter personal) {this.waiter = personal;}
+    public void setWaiter(Waiter waiter) {this.waiter = waiter;}
 
     public boolean getOccupied() {return isOccupied;}
 
