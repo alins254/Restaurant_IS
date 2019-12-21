@@ -23,6 +23,26 @@ public class Invoice {
         return  total;
     }
 
+    public Date getInvoiceDate() {
+        return invoiceDate;
+    }
+
+    public void setComanda(String comanda) {
+        this.comanda = comanda;
+    }
+
+    public void setInvoiceDate(Date invoiceDate) {
+        this.invoiceDate = invoiceDate;
+    }
+
+    public void setTable(String table) {
+        this.table = table;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
     public void generate(){
         PrintWriter pw = null;
         try {
