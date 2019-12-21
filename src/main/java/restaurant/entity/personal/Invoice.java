@@ -43,11 +43,6 @@ public class Invoice {
         return invoiceDate;
     }
 
-    public void setInvoiceDate(Date invoiceDate) {
-        this.invoiceDate = invoiceDate;
-    }
-
-
     public void generate(Orders order){
         PrintWriter pw = null;
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");

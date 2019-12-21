@@ -5,7 +5,6 @@ import restaurant.entity.orders.Orders;
 import restaurant.entity.table.Table;
 import restaurant.service.TableService;
 
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;

@@ -2,7 +2,6 @@ package restaurant.entity.personal;
 
 import org.hibernate.criterion.Order;
 import restaurant.entity.orders.Orders;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
@@ -87,6 +86,7 @@ public class Chef extends Personal implements Observer {
 			setChanged();
 			notifyObservers(doneOrder);
 		}
+
 	}
 }
 

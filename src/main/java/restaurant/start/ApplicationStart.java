@@ -17,6 +17,9 @@ public class ApplicationStart {
 
 	public static void main(String[] args) {
 		/*
+<<<<<<< HEAD
+=======
+>>>>>>> personal and invoice
 =======
 >>>>>>> personal and invoice
 		UserService userService = new UserService();
@@ -24,6 +27,7 @@ public class ApplicationStart {
 		user.setAge(18);
 		user.setName("Tufisi");
 		System.out.println(userService.addUser(user));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
