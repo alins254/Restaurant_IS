@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.EntryController">
+<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.ClientMenuController">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
@@ -59,10 +59,10 @@
             <children>
                <Pane layoutX="10.0" layoutY="13.0" prefHeight="142.0" prefWidth="192.0" style="-fx-background-color: #FFF;">
                   <children>
-                     <Button layoutX="33.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Request waiter" />
-                     <Button layoutX="33.0" layoutY="42.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Order Food" />
-                     <Button layoutX="33.0" layoutY="75.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Ask for receipt" />
-                     <Button layoutX="33.0" layoutY="108.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Leave table" />
+                     <Button fx:id="btnRequestWaiter" layoutX="33.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#askWaiterAction" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #00C64F;" text="Request waiter" />
+                     <Button fx:id="btnOrderFood" layoutX="33.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#orderFoodAction" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #00C64F;" text="Order Food" />
+                     <Button fx:id="btnRequestReceipt" layoutX="33.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#requestReceiptAction" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #00C64F;" text="Request receipt" />
+                     <Button fx:id="btnLeaveTable" layoutX="33.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#leaveTableAction" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #E40000;" text="Leave table" />
                   </children>
                </Pane>
             </children>
@@ -76,6 +76,16 @@
                     </ImageView>
                 </children>
             </Pane>
+         <AnchorPane layoutX="122.0" layoutY="75.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0">
+            <children>
+               <Pane fx:id="customDialog" layoutX="75.0" layoutY="108.0" prefHeight="168.0" prefWidth="265.0" style="-fx-background-color: #FFF; -fx-border-color: #B5B5B5;">
+                  <children>
+                     <HBox prefHeight="25.0" prefWidth="266.0" style="-fx-background-color: #B5B5B5;" />
+                     <Button fx:id="btnOk" layoutX="103.0" layoutY="122.0" mnemonicParsing="false" onMouseClicked="#dialogBoxAction" prefHeight="25.0" prefWidth="61.0" text="Ok" />
+                     <Label fx:id="dialogMessage" layoutX="24.0" layoutY="49.0" prefHeight="60.0" prefWidth="220.0" text="" />
+                  </children>
+               </Pane>
+            </children></AnchorPane>
         </children>
     </AnchorPane>
 </VBox>
