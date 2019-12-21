@@ -26,6 +26,8 @@ public class ApplicationStart {
 		user.setName("Tufisi");
 		System.out.println(userService.addUser(user));
 
+
 		TestService.test();
+
 	}
 }

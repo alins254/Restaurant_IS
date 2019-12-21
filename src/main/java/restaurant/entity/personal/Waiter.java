@@ -36,22 +36,15 @@ public class Waiter extends Personal implements Observer {
 		//setType("waiter");
 		tables = new ArrayList<Table>();
 		orders = new ArrayList<Orders>();
+
 	}
 
 	public List getTables() {
 		return tables;
 	}
 
-	public List getInvoices() {
-		return orders;
-	}
-
 	public void setTables(List tables) {
 		this.tables = tables;
-	}
-
-	public void setInvoices(List invoices) {
-		this.orders = invoices;
 	}
 
 	public void addOrder(Orders o){
@@ -101,5 +94,7 @@ public class Waiter extends Personal implements Observer {
 								orders.remove(doneOrder);
 				}
 		}
+
 	}
+
 }
