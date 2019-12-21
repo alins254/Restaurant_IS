@@ -6,28 +6,30 @@ import java.util.List;
 import restaurant.entity.menu.Menu;
 import restaurant.entity.personal.Waiter;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Orders {
 
-	@Id
+//	@Id
 	private String id;
 
-	@Transient
+//	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Waiter.class)
+//	@JoinColumn(name="waiter_id")
+//	@Transient
 	private Waiter waiter;
 
-	@Column
+//	@Column
 	private Integer table;
 
-	@Column
-	private Double totalPrice;
+//	@Column
+	private Float totalPrice;
 
-	@Column
+//	@Column
 	private Date placedAt;
 
 //	@ManyToMany(mappedBy = "order",fetch = FetchType.EAGER)
-	@Transient
+//	@Transient
 	private List<Menu> menuItems;
 
 	public Orders() {}
@@ -36,6 +38,7 @@ public class Orders {
 		this.table = table;
 		this.waiter = waiter;
 		this.menuItems = menuItems;
+		this.placedAt = new Date();
 	}
 
 	public String getId(){return id;}
@@ -44,19 +47,15 @@ public class Orders {
 
 	public void setTable(Integer table) {this.table = table;}
 
-//	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Waiter.class)
-//	@JoinColumn(name="waiter_id")
 	public Waiter getWaiter() {return waiter;}
 
 	public void setWaiter(Waiter waiter) {this.waiter = waiter;}
 
-	public Double getPrice() {return totalPrice;}
+	public Float getPrice() {return totalPrice;}
 
-	public void setPrice(Double price) {this.totalPrice = price;}
+	public void setPrice(Float price) {this.totalPrice = price;}
 
 	public Date getPlacedAt() {return placedAt;}
-
-	public void setPlacedAt(Date placedAt) {this.placedAt = placedAt;}
 
 	public List<Menu> getMenuItems() {return menuItems;}
 
