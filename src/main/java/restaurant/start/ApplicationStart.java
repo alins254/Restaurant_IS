@@ -15,5 +15,7 @@ public class ApplicationStart {
 		user.setAge(18);
 		user.setName("Tufisi");
 		System.out.println(userService.addUser(user));
+
+
 	}
 }
