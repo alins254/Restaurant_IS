@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.ClientMenuController">
+<VBox fx:id="mainBox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.ClientMenuController">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
@@ -27,11 +27,11 @@
                                 </font></Button>
                         </children></HBox>
                 </children></Pane>
-            <Pane layoutX="14.0" layoutY="74.0" prefHeight="392.0" prefWidth="386.0" style="-fx-background-color: #E5E4E4;">
+            <Pane fx:id="tablePane" layoutX="14.0" layoutY="74.0" prefHeight="392.0" prefWidth="386.0" style="-fx-background-color: #E5E4E4;">
                 <children>
                     <Pane layoutX="13.0" layoutY="89.0" prefHeight="289.0" prefWidth="361.0" style="-fx-background-color: #FFF;">
                   <children>
-                     <TableView layoutX="13.0" layoutY="14.0" prefHeight="263.0" prefWidth="335.0">
+                     <TableView fx:id="menuItemsTable" layoutX="13.0" layoutY="14.0" prefHeight="263.0" prefWidth="335.0">
                        <columns>
                          <TableColumn prefWidth="221.60003662109375" text="Name" />
                          <TableColumn prefWidth="47.199974060058594" text="Price" />
@@ -55,7 +55,7 @@
                </Label>
                 </children>
             </Pane>
-            <Pane layoutX="414.0" layoutY="297.0" prefHeight="168.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
+            <Pane fx:id="buttonsPane" layoutX="414.0" layoutY="297.0" prefHeight="168.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
             <children>
                <Pane layoutX="10.0" layoutY="13.0" prefHeight="142.0" prefWidth="192.0" style="-fx-background-color: #FFF;">
                   <children>
@@ -78,13 +78,21 @@
             </Pane>
          <AnchorPane layoutX="122.0" layoutY="75.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0">
             <children>
-               <Pane fx:id="customDialog" layoutX="75.0" layoutY="108.0" prefHeight="168.0" prefWidth="265.0" style="-fx-background-color: #FFF; -fx-border-color: #B5B5B5;">
-                  <children>
-                     <HBox prefHeight="25.0" prefWidth="266.0" style="-fx-background-color: #B5B5B5;" />
-                     <Button fx:id="btnOk" layoutX="103.0" layoutY="122.0" mnemonicParsing="false" onMouseClicked="#dialogBoxAction" prefHeight="25.0" prefWidth="61.0" text="Ok" />
-                     <Label fx:id="dialogMessage" layoutX="24.0" layoutY="49.0" prefHeight="60.0" prefWidth="220.0" text="" />
-                  </children>
-               </Pane>
+               <DialogPane fx:id="customDialog" layoutX="80.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="142.0" prefWidth="252.0" style="-fx-border-color: #B5B5B5;">
+                  <header>
+                     <HBox prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #B5B5B5;" />
+                  </header>
+                  <content>
+                     <Pane prefHeight="85.0" prefWidth="216.0">
+                        <children>
+                           <Label fx:id="dialogMessage" layoutX="10.0" layoutY="14.0" prefHeight="47.0" prefWidth="233.0">
+                              <font>
+                                 <Font name="Arial" size="12.0" />
+                              </font></Label>
+                           <Button fx:id="btnOk" layoutX="92.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#hideDialogBox" prefHeight="26.0" prefWidth="70.0" text="Ok" />
+                        </children>
+                     </Pane>
+                  </content></DialogPane>
             </children></AnchorPane>
         </children>
     </AnchorPane>

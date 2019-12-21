@@ -2,22 +2,25 @@ package restaurant.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import restaurant.entity.menu.Menu;
 
 public class ClientMenuController implements Initializable {
     private double x, y;
     private boolean hasOrdered = false;
 
+    @FXML private VBox mainBox;
     @FXML private TextField username;
     @FXML private PasswordField password;
     @FXML private Button login;
@@ -26,9 +29,11 @@ public class ClientMenuController implements Initializable {
     @FXML private Button btnRequestReceipt;
     @FXML private Button btnOk;
     @FXML private Button btnLeaveTable;
-    @FXML private Pane customDialog;
+    @FXML private DialogPane customDialog;
     @FXML private Label dialogMessage;
-
+    @FXML private Pane tablePane;
+    @FXML private Pane buttonsPane;
+    @FXML private TableView menuItemsTable;
 
     //top bar methods
     @FXML
@@ -59,12 +64,12 @@ public class ClientMenuController implements Initializable {
     //content methods
     @FXML
     public void askWaiterAction(MouseEvent event) {
-        showDialogBox("The waiter is on his way. Please wait.");
+        showDialogBox("The waiter is on his way.");
     }
 
     @FXML
     public void orderFoodAction(MouseEvent event) {
-        showDialogBox("Your order will be ready as soon as possible.");
+        showDialogBox("Order placed.");
         btnLeaveTable.setDisable(true);
         hasOrdered = true;
     }
@@ -72,8 +77,7 @@ public class ClientMenuController implements Initializable {
     @FXML
     public void requestReceiptAction(MouseEvent event) {
         if (hasOrdered) {
-            showDialogBox("Receipt requested. Please wait.");
-            System.out.println("Receipt requested. Please wait.");
+            showDialogBox("Receipt requested.");
         } else {
             showDialogBox("You have to order first.");
             hasOrdered = false;
@@ -92,17 +96,18 @@ public class ClientMenuController implements Initializable {
         btnOk.setDisable(false);
         btnOk.setVisible(true);
 
-        dialogMessage.setText(message);
-    }
+        tablePane.setDisable(true);
+        buttonsPane.setDisable(true);
 
-    @FXML
-    public void dialogBoxAction(MouseEvent event) {
-        hideDialogBox();
+        dialogMessage.setText(message);
+        dialogMessage.setAlignment(Pos.CENTER);
     }
 
     @FXML
     public void hideDialogBox() {
         customDialog.setVisible(false);
+        tablePane.setDisable(false);
+        buttonsPane.setDisable(false);
         btnOk.setDisable(true);
         btnOk.setVisible(false);
     }
@@ -110,5 +115,8 @@ public class ClientMenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb){
         hideDialogBox();
+    }
+
+    public void addMenuItems(List<Menu> menuItemsList) {
     }
 }
