@@ -26,19 +26,19 @@
                         </font></Button>
                   </children></HBox>
             </children></Pane>
-         <Pane layoutX="190.0" layoutY="143.0" prefHeight="270.0" prefWidth="260.0" style="-fx-background-color: E5E4E4;">
+         <Pane layoutX="190.0" layoutY="154.0" prefHeight="244.0" prefWidth="260.0" style="-fx-background-color: E5E4E4;">
             <children>
-               <Pane layoutX="23.0" layoutY="71.0" prefHeight="156.0" prefWidth="214.0" style="-fx-background-color: FFF;">
+               <Pane layoutX="16.0" layoutY="71.0" prefHeight="157.0" prefWidth="228.0" style="-fx-background-color: FFF;">
                   <children>
-                     <Text layoutX="8.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                     <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
                         <font>
                            <Font name="Arial" size="12.0" />
                         </font>
                      </Text>
-                     <Text layoutX="8.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="55.35351276397705" />
-                     <Button layoutX="76.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#onLogin" prefHeight="25.0" prefWidth="62.0" text="Login" />
-                     <TextField fx:id="username" layoutX="72.0" layoutY="26.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
-                     <PasswordField fx:id="password" layoutX="72.0" layoutY="65.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
+                     <Text layoutX="14.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="55.35351276397705" />
+                     <Button layoutX="83.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#onLogin" prefHeight="25.0" prefWidth="62.0" text="Login" />
+                     <TextField fx:id="username" layoutX="82.0" layoutY="24.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
+                     <PasswordField fx:id="password" layoutX="82.0" layoutY="65.0" prefHeight="25.0" prefWidth="132.0" style="-fx-border-color: AAAAAA;" text="" />
 
                   </children></Pane>
                <Text layoutX="105.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="62.09765625">
