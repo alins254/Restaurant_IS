@@ -68,7 +68,7 @@
                </Label>
                <Pane layoutX="13.0" layoutY="78.0" prefHeight="70.0" prefWidth="187.0" style="-fx-background-color: #FFF;">
                   <children>
-                     <Button layoutX="50.0" layoutY="23.0" mnemonicParsing="false" onMouseClicked="#onRedirectLogin" prefHeight="25.0" prefWidth="96.0" text="Go to Login" />
+                     <Button fx:id="btnLogin" layoutX="50.0" layoutY="23.0" mnemonicParsing="false" onMouseClicked="#onRedirectLogin" prefHeight="25.0" prefWidth="96.0" text="Go to Login" />
                   </children>
                </Pane>
                <Label layoutX="58.0" layoutY="70.0">

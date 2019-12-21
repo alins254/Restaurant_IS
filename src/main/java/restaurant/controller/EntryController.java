@@ -28,6 +28,7 @@ public class EntryController implements Initializable {
     @FXML private Button table10;
     @FXML private Button table11;
     @FXML private Button table12;
+    @FXML private Button btnLogin;
 
     @FXML
     public void onDragTopBar(MouseEvent event){
