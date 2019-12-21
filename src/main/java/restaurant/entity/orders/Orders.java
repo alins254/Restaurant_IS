@@ -6,21 +6,24 @@ import java.util.List;
 import restaurant.entity.menu.Menu;
 import restaurant.entity.personal.Waiter;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 public class Orders {
 
-//	@Id
+	@Id
 	private String id;
 
-//	@Column
+	@Column
 	private Waiter waiter;
 
-//	@Column
+	@Column
 	private Integer table;
 
-//	@Column
+	@Column
 	private Double totalPrice;
 
-//	@Column
+	@Column
 	private Date placedAt;
 
 //	@ManyToMany(mappedBy = "order",fetch = FetchType.EAGER)

@@ -1,17 +1,10 @@
 package restaurant.service;
-
 import javax.persistence.*;
-
 import restaurant.entity.personal.Waiter;
 
-//@Entity
 public class Table {
 
-//    @Id
     private String id;
-
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name="waiter_id")
     private Waiter waiter;
 
     public Table(){}
