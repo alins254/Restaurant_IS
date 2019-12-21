@@ -11,7 +11,7 @@ public class Entry extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/entry.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ui-components/entry.fxml"));
         primaryStage.setScene(new Scene(root, 640, 480));
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.TRANSPARENT);

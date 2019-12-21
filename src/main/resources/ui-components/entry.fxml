@@ -11,9 +11,9 @@
         <children>
             <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
                 <children>
-                    <HBox alignment="CENTER_RIGHT" onMouseDragged="#onDragTopBar" onMousePressed="#onPressTopBar" prefHeight="27.0" prefWidth="640.0" style="-fx-background-color: AF0000;" stylesheets="@style.css">
+                    <HBox alignment="CENTER_RIGHT" onMouseDragged="#onDragTopBar" onMousePressed="#onPressTopBar" prefHeight="27.0" prefWidth="640.0" style="-fx-background-color: AF0000;" stylesheets="@../style.css">
                         <children>
-                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onHideWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@style.css" text="–">
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onHideWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@../style.css" text="–">
                                 <HBox.margin>
                                     <Insets right="1.0" />
                                 </HBox.margin>
@@ -21,7 +21,7 @@
                                     <Font name="System Bold" size="12.0" />
                                 </font>
                             </Button>
-                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onCloseWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@style.css" text="x">
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onCloseWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@../style.css" text="x">
                                 <font>
                                     <Font name="System Bold" size="12.0" />
                                 </font></Button>
@@ -82,7 +82,7 @@
             <children>
                <ImageView fitHeight="272.0" fitWidth="195.0" layoutX="10.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@logo_bucatar.png" />
+                     <Image url="@../logo_bucatar.png" />
                   </image>
                </ImageView>
             </children>
