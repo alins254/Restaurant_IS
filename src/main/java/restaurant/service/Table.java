@@ -9,7 +9,10 @@ public class Table {
 
     public Table(){}
 
-    public Table(Waiter waiter){this.waiter = waiter;}
+    public Table(Waiter waiter) {
+        this.waiter = waiter;
+        this.isOccupied = false;
+    }
 
     public String getId(){return id;}
 
