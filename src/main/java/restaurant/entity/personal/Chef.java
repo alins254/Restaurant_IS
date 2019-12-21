@@ -23,7 +23,6 @@ public class Chef extends Personal implements Observer {
 
 	public Chef() {
 		super();
-
 		orders = new ArrayList<Orders>();
 	}
 
@@ -88,7 +87,6 @@ public class Chef extends Personal implements Observer {
 			setChanged();
 			notifyObservers(doneOrder);
 		}
-
 	}
 }
 

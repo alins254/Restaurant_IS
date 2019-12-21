@@ -14,7 +14,6 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -59,6 +58,7 @@ public class Invoice {
             fileName+=new String(dateFormat.format(this.invoiceDate));
             fileName+=new String(".txt");
             pw = new PrintWriter(fileName, "UTF-8");
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
