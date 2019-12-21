@@ -4,36 +4,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Waiter implements Personal {
+public class Waiter extends Personal {
 
-	private String name;
-	private Date dateOfEmployment;
-	private Double salary;
 	List tables;
-	List invoices;
+	List orders;
 
 	public Waiter() {
-		this.dateOfEmployment = new Date();
+
+		super();
 	}
 
 	public Waiter(String name, Double salary) {
-		this.name = name;
-		this.salary = salary;
-		this.dateOfEmployment = new Date();
+		super(name,salary);
+		super.setDateOfEmployment(new Date());
+		//default lista de mese
 		tables = new ArrayList<String>();
-		invoices = new ArrayList<String>();
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public Date getDateOfEmployment() {
-		return dateOfEmployment;
-	}
-
-	public Double getSalary() {
-		return salary;
+		orders = new ArrayList<String>();
 	}
 
 	public List getTables() {
@@ -41,16 +27,7 @@ public class Waiter implements Personal {
 	}
 
 	public List getInvoices() {
-		return invoices;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public void setSalary(Double salary) {
-		this.salary = salary;
+		return orders;
 	}
 
 	public void setTables(List tables) {
@@ -58,6 +35,7 @@ public class Waiter implements Personal {
 	}
 
 	public void setInvoices(List invoices) {
-		this.invoices = invoices;
+		this.orders = invoices;
 	}
+
 }
