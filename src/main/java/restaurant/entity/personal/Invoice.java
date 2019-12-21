@@ -28,7 +28,6 @@ public class Invoice {
     public Date getInvoiceDate() {
         return invoiceDate;
     }
-
     public void setComanda(String comanda) {
         this.comanda = comanda;
     }
