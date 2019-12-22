@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class Entry extends Application {
+public class EntryView extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{

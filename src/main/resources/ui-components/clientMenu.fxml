@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox fx:id="mainBox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.ClientMenuController">
+<VBox fx:id="mainBox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.ClientViewController">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
@@ -59,15 +59,15 @@
             <children>
                <Pane layoutX="10.0" layoutY="13.0" prefHeight="142.0" prefWidth="192.0" style="-fx-background-color: #FFF;">
                   <children>
-                     <Button fx:id="btnRequestWaiter" layoutX="33.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#askWaiterAction" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #00C64F;" text="Request waiter" />
-                     <Button fx:id="btnOrderFood" layoutX="33.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#orderFoodAction" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #00C64F;" text="Order Food" />
-                     <Button fx:id="btnRequestReceipt" layoutX="33.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#requestReceiptAction" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #00C64F;" text="Request receipt" />
-                     <Button fx:id="btnLeaveTable" layoutX="33.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#leaveTableAction" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #E40000;" text="Leave table" />
+                     <Button fx:id="btnRequestWaiter" layoutX="33.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#askWaiterAction" prefHeight="25.0" prefWidth="126.0" text="Request waiter" />
+                     <Button fx:id="btnOrderFood" layoutX="33.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#orderFoodAction" prefHeight="25.0" prefWidth="126.0" text="Order Food" />
+                     <Button fx:id="btnRequestReceipt" layoutX="33.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#requestReceiptAction" prefHeight="25.0" prefWidth="126.0" text="Request receipt" />
+                     <Button fx:id="btnLeaveTable" layoutX="33.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#leaveTableAction" prefHeight="25.0" prefWidth="126.0" text="Leave table" />
                   </children>
                </Pane>
             </children>
             </Pane>
-            <Pane layoutX="414.0" layoutY="74.0" prefHeight="207.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
+            <Pane fx:id="logoPane" layoutX="414.0" layoutY="74.0" prefHeight="207.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
                 <children>
                     <ImageView fitHeight="272.0" fitWidth="195.0" layoutX="10.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
                         <image>

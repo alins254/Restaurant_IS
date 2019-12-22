@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class EntryController implements Initializable {
+public class EntryViewController implements Initializable {
     private double x, y;
     private Map<Integer, Button> tableId = new HashMap<Integer, Button>();
 
