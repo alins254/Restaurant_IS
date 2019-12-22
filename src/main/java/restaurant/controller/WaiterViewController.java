@@ -17,7 +17,6 @@ import restaurant.entity.menu.Menu;
 
 public class WaiterViewController implements Initializable {
     private double x, y;
-    private boolean hasOrdered = false;
     private Map<Integer, Button> tablesMap = new HashMap<Integer, Button>();
 
     @FXML private Button waiterT1;
