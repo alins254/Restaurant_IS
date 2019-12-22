@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="mainBox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.AdminViewController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+            <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
+                <children>
+                    <HBox alignment="CENTER_RIGHT" layoutY="1.0" onMouseDragged="#onDragTopBar" onMousePressed="#onPressTopBar" prefHeight="27.0" prefWidth="640.0" style="-fx-background-color: AF0000;" stylesheets="@../style.css">
+                        <children>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onHideWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@../style.css" text="–">
+                                <HBox.margin>
+                                    <Insets right="1.0" />
+                                </HBox.margin>
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font>
+                            </Button>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onCloseWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@../style.css" text="x">
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font></Button>
+                        </children></HBox>
+                </children></Pane>
+            <Pane fx:id="tablePane" layoutX="14.0" layoutY="74.0" prefHeight="392.0" prefWidth="386.0" style="-fx-background-color: #E5E4E4;">
+                <children>
+                    <Label layoutX="128.0" layoutY="24.0" prefHeight="21.0" prefWidth="131.0" text="Admin Window">
+                        <font>
+                            <Font name="Arial Bold" size="18.0" />
+                        </font>
+                    </Label>
+               <Pane layoutX="11.0" layoutY="77.0" prefHeight="44.0" prefWidth="366.0" style="-fx-background-color: #FFF;">
+                  <children>
+                     <Button fx:id="btnHireStaff" layoutX="23.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#hireStaff" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #00C64F;" text="Hire staff" />
+                     <Button fx:id="btnSaveChanges" layoutX="257.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#saveChanges" prefHeight="25.0" prefWidth="88.0" text="Save changes" />
+                     <Button fx:id="btnFireStaff" layoutX="139.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#fireStaff" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #E40000;" text="Fire staff" />
+                  </children>
+               </Pane>
+               <TableView layoutX="11.0" layoutY="134.0" prefHeight="244.0" prefWidth="366.0">
+                 <columns>
+                   <TableColumn prefWidth="183.20001602172852" text="Name" />
+                     <TableColumn prefWidth="70.39994812011719" text="Role" />
+                   <TableColumn prefWidth="56.5999755859375" text="Date" />
+                     <TableColumn prefWidth="56.39996337890625" text="Salary" />
+                 </columns>
+               </TableView>
+                </children>
+            </Pane>
+            <Pane fx:id="buttonsPane" layoutX="414.0" layoutY="297.0" prefHeight="168.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
+                <children>
+                    <Pane layoutX="10.0" layoutY="64.0" prefHeight="90.0" prefWidth="192.0" style="-fx-background-color: #FFF;">
+                        <children>
+                            <Button fx:id="btnLogout" layoutX="52.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #E40000;" text="Logout" />
+                            <Button fx:id="btnInspectStock" layoutX="52.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#inspectStock" prefHeight="25.0" prefWidth="88.0" text="Inspect stock" />
+                        </children>
+                    </Pane>
+                    <Label fx:id="waiterName" layoutX="57.0" layoutY="25.0" prefHeight="20.0" prefWidth="98.0" text="Other actions">
+                        <font>
+                            <Font name="Arial" size="16.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane fx:id="logoPane" layoutX="414.0" layoutY="74.0" prefHeight="207.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
+                <children>
+                    <ImageView fitHeight="272.0" fitWidth="195.0" layoutX="10.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../logo_bucatar.png" />
+                        </image>
+                    </ImageView>
+                </children>
+            </Pane>
+        </children>
+    </AnchorPane>
+</VBox>
