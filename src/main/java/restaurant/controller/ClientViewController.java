@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 import restaurant.entity.menu.Menu;
 
-public class ClientMenuController implements Initializable {
+public class ClientViewController implements Initializable {
     private double x, y;
     private boolean hasOrdered = false;
 
@@ -106,8 +106,10 @@ public class ClientMenuController implements Initializable {
     @FXML
     public void hideDialogBox() {
         customDialog.setVisible(false);
+
         tablePane.setDisable(false);
         buttonsPane.setDisable(false);
+
         btnOk.setDisable(true);
         btnOk.setVisible(false);
     }
