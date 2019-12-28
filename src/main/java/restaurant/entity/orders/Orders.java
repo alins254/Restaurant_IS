@@ -3,7 +3,7 @@ package restaurant.entity.orders;
 import java.util.Date;
 import java.util.List;
 
-import restaurant.entity.menu.Menu;
+import restaurant.entity.menu.MenuItem;
 import restaurant.entity.personal.Waiter;
 
 //import javax.persistence.*;
@@ -16,7 +16,6 @@ public class Orders {
 
 //	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Waiter.class)
 //	@JoinColumn(name="waiter_id")
-//	@Transient
 	private Waiter waiter;
 
 //	@Column
@@ -28,13 +27,17 @@ public class Orders {
 //	@Column
 	private Date placedAt;
 
-//	@ManyToMany(mappedBy = "order",fetch = FetchType.EAGER)
-//	@Transient
-	private List<Menu> menuItems;
+//	@ManyToMany(cascade = { CascadeType.ALL })
+//  @JoinTable(
+//    name = "Orders_MenuItem",
+//    joinColumns = { @JoinColumn(name = "orders_id") },
+//    inverseJoinColumns = { @JoinColumn(name = "menuitem_id") }
+//  )
+	private List<MenuItem> menuItems;
 
 	public Orders() {}
 
-	public Orders(Integer table, Waiter waiter, List<Menu> menuItems) {
+	public Orders(Integer table, Waiter waiter, List<MenuItem> menuItems) {
 		this.table = table;
 		this.waiter = waiter;
 		this.menuItems = menuItems;
@@ -57,8 +60,8 @@ public class Orders {
 
 	public Date getPlacedAt() {return placedAt;}
 
-	public List<Menu> getMenuItems() {return menuItems;}
+	public List<MenuItem> getMenuItems() {return menuItems;}
 
-	public void setMenuItems(List<Menu> menuItems) {this.menuItems = menuItems;}
+	public void setMenuItems(List<MenuItem> menuItems) {this.menuItems = menuItems;}
 
 }
