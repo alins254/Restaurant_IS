@@ -75,6 +75,54 @@
                     </ImageView>
                 </children>
             </Pane>
+            <AnchorPane layoutX="122.0" layoutY="20.0" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="320.0">
+                <children>
+                    <DialogPane fx:id="customDialog" layoutX="44.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="310.0" style="-fx-border-color: #B5B5B5;">
+                        <header>
+                            <HBox prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #B5B5B5;" />
+                        </header>
+                        <content>
+                            <Pane prefHeight="85.0" prefWidth="216.0">
+                                <children>
+                                    <Label layoutX="36.0" layoutY="46.0" prefHeight="21.0" prefWidth="48.0" text="Name">
+                                        <font>
+                                            <Font name="Arial" size="12.0" />
+                                        </font></Label>
+                                   <Label layoutX="34.0" layoutY="176.0" prefHeight="21.0" prefWidth="46.0" text="Salary">
+                                      <font>
+                                         <Font name="Arial" size="12.0" />
+                                      </font>
+                                   </Label>
+                                   <Label layoutX="36.0" layoutY="146.0" prefHeight="21.0" prefWidth="42.0" text="Role">
+                                      <font>
+                                         <Font name="Arial" size="12.0" />
+                                      </font>
+                                   </Label>
+                                   <Label layoutX="37.0" layoutY="79.0" prefHeight="21.0" prefWidth="62.0" text="Username">
+                                      <font>
+                                         <Font name="Arial" size="12.0" />
+                                      </font>
+                                   </Label>
+                                   <Label layoutX="11.0" layoutY="14.0" prefHeight="21.0" prefWidth="131.0" text="Personal Information">
+                                      <font>
+                                         <Font name="Arial" size="14.0" />
+                                      </font>
+                                   </Label>
+                                   <Label layoutX="11.0" layoutY="109.0" prefHeight="21.0" prefWidth="162.0" text="Employment Information">
+                                      <font>
+                                         <Font name="Arial" size="14.0" />
+                                      </font>
+                                   </Label>
+                                   <Button fx:id="btnCreateUser" layoutX="55.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#createUser" prefHeight="25.0" prefWidth="88.0" text="Create" />
+                                   <Button fx:id="btnDiscard" layoutX="165.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#discard" prefHeight="25.0" prefWidth="88.0" text="Discard" />
+                                   <TextField fx:id="nameField" layoutX="118.0" layoutY="46.0" onKeyTyped="#onNameFieldChange" />
+                                   <TextField fx:id="usernameField" layoutX="118.0" layoutY="77.0" onKeyTyped="#onUsernameFieldChange" />
+                                   <TextField fx:id="salaryField" layoutX="118.0" layoutY="174.0" onKeyTyped="#onSalaryFieldChange" />
+                                    <ChoiceBox fx:id="roleChoice" layoutX="118.0" layoutY="142.0" prefHeight="26.0" prefWidth="148.0" />
+                                </children>
+                            </Pane>
+                        </content></DialogPane>
+                </children></AnchorPane>
         </children>
     </AnchorPane>
 </VBox>
