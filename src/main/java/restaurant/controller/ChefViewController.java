@@ -3,22 +3,16 @@ package restaurant.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
-public class LoginController implements Initializable {
+public class ChefViewController implements Initializable {
     private double x, y;
 
-    @FXML TextField username;
-    @FXML PasswordField password;
-    @FXML Button login;
-
+    //top bar methods
     @FXML
     public void onDragTopBar(MouseEvent event){
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -44,11 +38,26 @@ public class LoginController implements Initializable {
         stage.setIconified(true);
     }
 
+    //content methods
+
     @FXML
-    public void onLogin(MouseEvent event){
-        System.out.println("Success login! Welcome back " + username.getText());
-        username.setText("");
-        password.setText("");
+    public void setReady() {
+        System.out.println("Order ready. Notify table x and waiter y.");
+    }
+
+    @FXML
+    public void setDeclined() {
+        System.out.println("Order declined. Notify table x and waiter y.");
+    }
+
+    @FXML
+    public void saveChanges() {
+        System.out.println("Save changes");
+    }
+
+    @FXML
+    public void logoutChef() {
+        System.out.println("Go back.");
     }
 
     @Override

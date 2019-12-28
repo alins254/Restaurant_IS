@@ -7,11 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class Login extends Application {
+public class EntryView extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ui-components/entry.fxml"));
         primaryStage.setScene(new Scene(root, 640, 480));
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.TRANSPARENT);

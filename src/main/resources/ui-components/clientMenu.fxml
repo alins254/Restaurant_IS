@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="mainBox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.ClientViewController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+            <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
+                <children>
+                    <HBox alignment="CENTER_RIGHT" onMouseDragged="#onDragTopBar" onMousePressed="#onPressTopBar" prefHeight="27.0" prefWidth="640.0" style="-fx-background-color: AF0000;" stylesheets="@../style.css">
+                        <children>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onHideWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@../style.css" text="–">
+                                <HBox.margin>
+                                    <Insets right="1.0" />
+                                </HBox.margin>
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font>
+                            </Button>
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onCloseWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@../style.css" text="x">
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font></Button>
+                        </children></HBox>
+                </children></Pane>
+            <Pane fx:id="tablePane" layoutX="14.0" layoutY="74.0" prefHeight="392.0" prefWidth="386.0" style="-fx-background-color: #E5E4E4;">
+                <children>
+                    <Pane layoutX="13.0" layoutY="89.0" prefHeight="289.0" prefWidth="361.0" style="-fx-background-color: #FFF;">
+                  <children>
+                     <TableView fx:id="menuItemsTable" layoutX="13.0" layoutY="14.0" prefHeight="263.0" prefWidth="335.0">
+                       <columns>
+                         <TableColumn prefWidth="221.60003662109375" text="Name" />
+                         <TableColumn prefWidth="47.199974060058594" text="Price" />
+                           <TableColumn prefWidth="65.5999755859375" text="Quantity" />
+                       </columns>
+                     </TableView>
+                  </children></Pane>
+               <Label layoutX="141.0" layoutY="14.0" prefHeight="27.0" prefWidth="106.0" text="Client Menu">
+                  <font>
+                     <Font name="Arial" size="18.0" />
+                  </font></Label>
+               <Label layoutX="98.0" layoutY="41.0" prefHeight="20.0" prefWidth="192.0" text="Please select the desired items">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label layoutX="58.0" layoutY="61.0" prefHeight="19.0" prefWidth="272.0" text="After you are done selecting, press Order Food">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+               </Label>
+                </children>
+            </Pane>
+            <Pane fx:id="buttonsPane" layoutX="414.0" layoutY="297.0" prefHeight="168.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
+            <children>
+               <Pane layoutX="10.0" layoutY="13.0" prefHeight="142.0" prefWidth="192.0" style="-fx-background-color: #FFF;">
+                  <children>
+                     <Button fx:id="btnRequestWaiter" layoutX="33.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#askWaiterAction" prefHeight="25.0" prefWidth="126.0" text="Request waiter" />
+                     <Button fx:id="btnOrderFood" layoutX="33.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#orderFoodAction" prefHeight="25.0" prefWidth="126.0" text="Order Food" />
+                     <Button fx:id="btnRequestReceipt" layoutX="33.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#requestReceiptAction" prefHeight="25.0" prefWidth="126.0" text="Request receipt" />
+                     <Button fx:id="btnLeaveTable" layoutX="33.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#leaveTableAction" prefHeight="25.0" prefWidth="126.0" text="Leave table" />
+                  </children>
+               </Pane>
+            </children>
+            </Pane>
+            <Pane fx:id="logoPane" layoutX="414.0" layoutY="74.0" prefHeight="207.0" prefWidth="212.0" style="-fx-background-color: #E5E4E4;">
+                <children>
+                    <ImageView fitHeight="272.0" fitWidth="195.0" layoutX="10.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../logo_bucatar.png" />
+                        </image>
+                    </ImageView>
+                </children>
+            </Pane>
+         <AnchorPane layoutX="122.0" layoutY="75.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0">
+            <children>
+               <DialogPane fx:id="customDialog" layoutX="80.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="142.0" prefWidth="252.0" style="-fx-border-color: #B5B5B5;">
+                  <header>
+                     <HBox prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #B5B5B5;" />
+                  </header>
+                  <content>
+                     <Pane prefHeight="85.0" prefWidth="216.0">
+                        <children>
+                           <Label fx:id="dialogMessage" layoutX="10.0" layoutY="14.0" prefHeight="47.0" prefWidth="233.0">
+                              <font>
+                                 <Font name="Arial" size="12.0" />
+                              </font></Label>
+                           <Button fx:id="btnOk" layoutX="92.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#hideDialogBox" prefHeight="26.0" prefWidth="70.0" text="Ok" />
+                        </children>
+                     </Pane>
+                  </content></DialogPane>
+            </children></AnchorPane>
+        </children>
+    </AnchorPane>
+</VBox>

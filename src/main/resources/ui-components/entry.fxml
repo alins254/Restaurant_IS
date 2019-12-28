@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.EntryController">
+<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.controller.EntryViewController">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Pane prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: AF0202;">
                 <children>
-                    <HBox alignment="CENTER_RIGHT" onMouseDragged="#onDragTopBar" onMousePressed="#onPressTopBar" prefHeight="27.0" prefWidth="640.0" style="-fx-background-color: AF0000;" stylesheets="@style.css">
+                    <HBox alignment="CENTER_RIGHT" onMouseDragged="#onDragTopBar" onMousePressed="#onPressTopBar" prefHeight="27.0" prefWidth="640.0" style="-fx-background-color: AF0000;" stylesheets="@../style.css">
                         <children>
-                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onHideWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@style.css" text="–">
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onHideWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@../style.css" text="–">
                                 <HBox.margin>
                                     <Insets right="1.0" />
                                 </HBox.margin>
@@ -21,7 +21,7 @@
                                     <Font name="System Bold" size="12.0" />
                                 </font>
                             </Button>
-                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onCloseWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@style.css" text="x">
+                            <Button contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#onCloseWindow" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: AF0202;" stylesheets="@../style.css" text="x">
                                 <font>
                                     <Font name="System Bold" size="12.0" />
                                 </font></Button>
@@ -68,7 +68,7 @@
                </Label>
                <Pane layoutX="13.0" layoutY="78.0" prefHeight="70.0" prefWidth="187.0" style="-fx-background-color: #FFF;">
                   <children>
-                     <Button layoutX="50.0" layoutY="23.0" mnemonicParsing="false" onMouseClicked="#onRedirectLogin" prefHeight="25.0" prefWidth="96.0" text="Go to Login" />
+                     <Button fx:id="btnLogin" layoutX="50.0" layoutY="23.0" mnemonicParsing="false" onMouseClicked="#onRedirectLogin" prefHeight="25.0" prefWidth="96.0" text="Go to Login" />
                   </children>
                </Pane>
                <Label layoutX="58.0" layoutY="70.0">
@@ -82,7 +82,7 @@
             <children>
                <ImageView fitHeight="272.0" fitWidth="195.0" layoutX="10.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@logo_bucatar.png" />
+                     <Image url="@../logo_bucatar.png" />
                   </image>
                </ImageView>
             </children>

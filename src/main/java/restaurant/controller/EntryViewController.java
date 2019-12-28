@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class EntryController implements Initializable {
+public class EntryViewController implements Initializable {
     private double x, y;
     private Map<Integer, Button> tableId = new HashMap<Integer, Button>();
 
@@ -28,6 +28,7 @@ public class EntryController implements Initializable {
     @FXML private Button table10;
     @FXML private Button table11;
     @FXML private Button table12;
+    @FXML private Button btnLogin;
 
     @FXML
     public void onDragTopBar(MouseEvent event){
