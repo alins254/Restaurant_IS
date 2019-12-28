@@ -157,6 +157,7 @@ public class AdminViewController implements Initializable {
         nameField.setText("");
         usernameField.setText("");
         salaryField.setText("");
+        roleChoice.setValue(roleList.get(0));
     }
 
     @Override
@@ -164,5 +165,6 @@ public class AdminViewController implements Initializable {
         customDialog.setVisible(false);
         btnCreateUser.setDisable(!isValid);
         roleChoice.getItems().addAll(roleList);
+        roleChoice.setValue(roleList.get(0));
     }
 }

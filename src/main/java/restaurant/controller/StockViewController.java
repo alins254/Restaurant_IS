@@ -145,6 +145,7 @@ public class StockViewController implements Initializable {
         nameField.setText("");
         priceField.setText("");
         quantityField.setText("");
+        typeChoice.setValue(typeList.get(0));
     }
 
 
@@ -169,5 +170,6 @@ public class StockViewController implements Initializable {
         customDialog.setVisible(false);
         btnCreateItem.setDisable(!isValid);
         typeChoice.getItems().addAll(typeList);
+        typeChoice.setValue(typeList.get(0));
     }
 }
