@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Invoice {
@@ -45,26 +47,33 @@ public class Invoice {
 
     public void generate(){
         PrintWriter pw = null;
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+
         try {
-            pw = new PrintWriter("Bill_"+invoiceDate.toString()+".txt", "UTF-8");
+            String fileName = new String("");
+            fileName+= new String("Bill_");
+            fileName+=new String(dateFormat.format(this.invoiceDate));
+            fileName+=new String(".txt");
+            System.out.println(fileName);
+            //nume factura
+            pw = new PrintWriter("bill.txt", "UTF-8");
 
-            pw.println("Date: " + invoiceDate);
-            pw.println("Table: " + table);
-            pw.println("Order: " + comanda);
-
-            pw.println();
-
-            calculateTotal("gcsvhbxn");
-
-            pw.println(total);
-
-            pw.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (NullPointerException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
+        pw.println("Date: " + new String(dateFormat.format(invoiceDate)));
+        pw.println("Table: " + table);
+        pw.println("Order: " + comanda);
+
+        pw.println();
+
+        calculateTotal("gcsvhbxn");
+
+        pw.println(total);
+
+        pw.close();
     }
 }
