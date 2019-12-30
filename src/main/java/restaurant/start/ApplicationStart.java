@@ -5,6 +5,11 @@ import restaurant.service.UserService;
 
 import javax.swing.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class ApplicationStart {
 
@@ -15,7 +20,5 @@ public class ApplicationStart {
 		user.setAge(18);
 		user.setName("Tufisi");
 		System.out.println(userService.addUser(user));
-
-
 	}
 }
