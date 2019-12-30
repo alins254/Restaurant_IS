@@ -87,6 +87,5 @@ public class Invoice {
         pw.println("TOTAL: " + price+"RON");
 
         pw.close();
-        
     }
 }
