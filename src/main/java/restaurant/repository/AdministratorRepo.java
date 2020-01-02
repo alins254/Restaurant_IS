@@ -7,7 +7,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.ArrayList;
 
-
 public class AdministratorRepo {
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("restaurant");
