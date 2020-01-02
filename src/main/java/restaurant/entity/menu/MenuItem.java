@@ -2,9 +2,14 @@ package restaurant.entity.menu;
 
 import javax.persistence.*;
 
+@Entity
 public abstract class MenuItem {
     @Id
-    private Integer id;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Integer menuId;
+
     @Column
     private String name;
     @Column
@@ -12,6 +17,12 @@ public abstract class MenuItem {
     @Column
     private String type;
 
+    public MenuItem(){}
+
+    public MenuItem(String name, float price){
+        this.name = name;
+        this.price = price;
+    }
 
     public String getName() {
         return name;
@@ -38,11 +49,10 @@ public abstract class MenuItem {
     }
 
     public Integer getId() {
-        return id;
+        return menuId;
     }
 
     public String showMenuItemDetails(){
-        String s = "";
-        return s;
+        return this.type + this.name + " has price " + this.price;
     }
 }
