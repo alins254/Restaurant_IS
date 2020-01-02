@@ -1,4 +1,5 @@
-package restaurant.service;
+package restaurant.entity.table;
+
 import restaurant.entity.personal.Waiter;
 
 import java.util.Objects;
@@ -14,25 +15,6 @@ public class Table extends Observable {
 
     public Table(Waiter waiter) {this.waiter = waiter;}
 
-    public void requestWaiter(){
-        this.setOccupied(true);
-        setChanged();
-        notifyObservers(waiter);
-    }
-
-    public void orderFood(){
-
-    }
-
-    public void requestReceipt(){
-        waiter.generateReceipt(this);
-    }
-
-    public void leaveTable(){
-        this.setOccupied(false);
-        setChanged();
-        notifyObservers(waiter);
-    }
     public String getId(){return id;}
 
     public Waiter getWaiter(){return waiter;}
@@ -57,4 +39,6 @@ public class Table extends Observable {
     public int hashCode() {
         return Objects.hash(id, waiter, isOccupied);
     }
+
+
 }

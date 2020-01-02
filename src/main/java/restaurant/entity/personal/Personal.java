@@ -65,10 +65,13 @@ public abstract class Personal extends Observable {
         this.type = type;
     }
 
+    /*
     @Override
     public synchronized void addObserver(Observer o) {
         super.addObserver(o);
     }
+
+     */
 
 
 

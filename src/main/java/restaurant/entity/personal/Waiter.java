@@ -3,14 +3,16 @@ package restaurant.entity.personal;
 import java.util.*;
 
 import restaurant.entity.orders.Orders;
-import restaurant.service.Table;
+import restaurant.entity.table.Table;
+import restaurant.service.TableService;
 
 public class Waiter extends Personal implements Observer {
 
     /*
-    chef notifies waiter when the order is ready
-    table notifies waiter when he's requested
-    table notifies waiter when clients leave the table
+    ----- Waiter is OBSERVER -----
+    table notifies waiter when clients leave the table  -> update method -> "left" string
+    table notifies waiter when he's requested			-> update method -> "request" string
+    chef notifies waiter when the order is ready		-> update method -> Orders type object
      */
 
 	List tables;
@@ -72,6 +74,24 @@ public class Waiter extends Personal implements Observer {
 	}
 	@Override
 	public void update(Observable o, Object arg) {
-		///to do
+		if (arg == null) {
+			System.out.println("NULL STRING -- update in Waiter");
+		} else {
+			if(arg instanceof String){
+				String message = (String)arg;
+				if(message.toLowerCase().equals("left"))
+					System.out.println("Thank you! Goodbye!");
+				else
+					if(message.toLowerCase().equals("request"))
+						System.out.println("On my way!");
+			}else
+				if(arg instanceof Orders){
+					Orders doneOrder = (Orders)arg;
+					for(Object ord : orders)
+						if(ord instanceof Orders)
+							if(((Orders)ord).equals(doneOrder))
+								orders.remove(doneOrder);
+				}
+		}
 	}
 }

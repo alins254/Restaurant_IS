@@ -1,12 +1,18 @@
 package restaurant.entity.personal;
 
+import org.hibernate.criterion.Order;
 import restaurant.entity.orders.Orders;
 
 import java.util.*;
 
 public class Chef extends Personal implements Observer {
 
-	/* table notifies chef when new order is placed  */
+	/*
+	----- Chef is OBSERVER -----
+	table notifies chef when new order is placed 	-> update method
+	----- Chef is OBSERVABLE -----
+	chef notifies waiter that the order is ready	-> orderPlaced method
+	*/
 
 	List orders;
 
@@ -29,26 +35,48 @@ public class Chef extends Personal implements Observer {
 		this.orders = orders;
 	}
 
+	/*
+	//method for random order prepared
 	public void orderIsPrepared(Orders currentOrder){
 		for(Object o: orders){
 			if(o instanceof Orders){
 				if(currentOrder.equals(o)){
 					((Orders) o).setCompleted(true);
-					((Orders) o).prepared();
+					////////##################################################################((Orders) o).prepared();
 				}
 			}
 		}
 	}
 
+	 */
+
 	@Override
 	public void update(Observable o, Object arg) {
-
+		if(arg == null)
+			System.out.println("NULL ORDER -- update in Chef");
+		else
+			if(arg instanceof Orders){
+				Orders newOrder = (Orders)arg;
+				orders.add(newOrder);
+		}
 	}
 
+	@Override
+	public synchronized void addObserver(Observer o) {
+		super.addObserver(o);
+	}
+
+	//#####################
 	public void orderPrepared(){
-		orders.remove(0);
-		setChanged();
-		notifyObservers();
-	}
+		if(orders == null)
+			System.out.println("No orders to prepare");
+		else{
+			Orders doneOrder = (Orders)orders.get(0);
+			orders.remove(0);
+			setChanged();
+			notifyObservers(doneOrder);
+		}
 
 	}
+    //#####################
+}

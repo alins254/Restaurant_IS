@@ -11,7 +11,7 @@ import restaurant.entity.personal.Waiter;
 //import javax.persistence.*;
 
 //@Entity
-public class Orders extends Observable {
+public class Orders {
 
 //	@Id
 	private String id;
@@ -66,14 +66,16 @@ public class Orders extends Observable {
 
 	public Date getPlacedAt() {return placedAt;}
 
-	public List<Menu> getMenuItems() {return menuItems;}
+	public List<Menu> getMenuItems() {return menuItems;} //aici cred ca ar tb lista de menu items -- cosmina
 
 	public void setMenuItems(List<Menu> menuItems) {this.menuItems = menuItems;}
 
+	/*
 	public void prepared(){
 		setChanged();
 		notifyObservers(waiter);
 	}
+	 */
 
 	public Boolean getCompleted() {
 		return completed;
