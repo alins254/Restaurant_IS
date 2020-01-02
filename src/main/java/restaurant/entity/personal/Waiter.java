@@ -1,10 +1,11 @@
 package restaurant.entity.personal;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
-public class Waiter extends Personal {
+import restaurant.entity.orders.Orders;
+import restaurant.service.Table;
+
+public class Waiter extends Personal implements Observer { //informed when table has a new order
 
 	List tables;
 	List orders;
@@ -17,9 +18,8 @@ public class Waiter extends Personal {
 	public Waiter(String name, Double salary) {
 		super(name,salary);
 		super.setDateOfEmployment(new Date());
-		//default lista de mese
-		tables = new ArrayList<String>();
-		orders = new ArrayList<String>();
+		tables = new ArrayList<Table>();
+		orders = new ArrayList<Orders>();
 	}
 
 	public List getTables() {
@@ -38,4 +38,34 @@ public class Waiter extends Personal {
 		this.orders = invoices;
 	}
 
+	public void addOrder(Orders o){
+		this.orders.add(o);
+		/*
+
+		NOTIFY CHEF
+
+		 */
+	}
+
+	public void generateReceipt(Table table){
+		Table thisTable = new Table();
+		for(Object t: this.tables){
+			if(t instanceof Table)
+				if(t.equals(table))
+					thisTable = (Table)t;
+		}
+		Orders thisOrder = new Orders();
+		for(Object o: this.orders){
+			if(o instanceof Orders)
+				if(((Orders) o).getTable().equals(thisTable.getId()))
+					thisOrder = (Orders)o;
+		}
+		Invoice i = new Invoice();
+		i.generate(thisOrder);
+
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		///to do
+	}
 }
