@@ -88,6 +88,4 @@ public abstract class Personal extends Observable {
         this.account = account;
     }
 
-
-
 }

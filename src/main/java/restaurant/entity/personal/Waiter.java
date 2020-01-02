@@ -9,6 +9,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
+
 @Entity(name = "Waiter")
 public class Waiter extends Personal implements Observer {
 
@@ -82,19 +83,22 @@ public class Waiter extends Personal implements Observer {
 		if (arg == null) {
 			System.out.println("NULL STRING -- update in Waiter");
 		} else {
-			if (arg instanceof String) {
-				String message = (String) arg;
-				if (message.toLowerCase().equals("left"))
+
+			if(arg instanceof String){
+				String message = (String)arg;
+				if(message.toLowerCase().equals("left"))
 					System.out.println("Thank you! Goodbye!");
-				else if (message.toLowerCase().equals("request"))
-					System.out.println("On my way!");
-			} else if (arg instanceof Orders) {
-				Orders doneOrder = (Orders) arg;
-				for (Object ord : orders)
-					if (ord instanceof Orders)
-						if (((Orders) ord).equals(doneOrder))
-							orders.remove(doneOrder);
-			}
+				else
+					if(message.toLowerCase().equals("request"))
+						System.out.println("On my way!");
+			}else
+				if(arg instanceof Orders){
+					Orders doneOrder = (Orders)arg;
+					for(Object ord : orders)
+						if(ord instanceof Orders)
+							if(((Orders)ord).equals(doneOrder))
+								orders.remove(doneOrder);
+				}
 		}
 	}
 

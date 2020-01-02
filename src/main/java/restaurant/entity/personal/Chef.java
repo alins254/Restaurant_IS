@@ -10,8 +10,6 @@ import java.util.*;
 @Entity(name = "Chef")
 public class Chef extends Personal implements Observer {
 
-
-
 	/*
 	----- Chef is OBSERVER -----
 	table notifies chef when new order is placed 	-> update method
@@ -42,15 +40,19 @@ public class Chef extends Personal implements Observer {
 
 	/*
 	//method for random order prepared
+<<<<<<< HEAD
 =======
 >>>>>>> work in progress personal
 =======
 >>>>>>> work in progress personal
+=======
+>>>>>>> observer grosso modo
 	public void orderIsPrepared(Orders currentOrder){
 		for(Object o: orders){
 			if(o instanceof Orders){
 				if(currentOrder.equals(o)){
 					((Orders) o).setCompleted(true);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 					////////##################################################################((Orders) o).prepared();
@@ -60,6 +62,9 @@ public class Chef extends Personal implements Observer {
 =======
 					((Orders) o).prepared();
 >>>>>>> work in progress personal
+=======
+					////////##################################################################((Orders) o).prepared();
+>>>>>>> observer grosso modo
 				}
 			}
 		}
@@ -67,6 +72,9 @@ public class Chef extends Personal implements Observer {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> observer grosso modo
 	 */
 
 	@Override
@@ -85,6 +93,7 @@ public class Chef extends Personal implements Observer {
 		super.addObserver(o);
 	}
 
+	//#####################
 	public void orderPrepared(){
 		if(orders == null)
 			System.out.println("No orders to prepare");
