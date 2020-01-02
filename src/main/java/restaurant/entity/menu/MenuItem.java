@@ -1,14 +1,14 @@
 package restaurant.entity.menu;
 
+import restaurant.entity.stock.Stock;
+
 import javax.persistence.*;
 
 @Entity
 public abstract class MenuItem {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private Integer menuId;
+    private Integer id;
 
     @Column
     private String name;
@@ -17,12 +17,9 @@ public abstract class MenuItem {
     @Column
     private String type;
 
-    public MenuItem(){}
-
-    public MenuItem(String name, float price){
-        this.name = name;
-        this.price = price;
-    }
+    @OneToOne(mappedBy = "MenuID", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private Stock stock;
 
     public String getName() {
         return name;
@@ -49,7 +46,7 @@ public abstract class MenuItem {
     }
 
     public Integer getId() {
-        return menuId;
+        return id;
     }
 
     public String showMenuItemDetails(){

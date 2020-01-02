@@ -1,5 +1,7 @@
 package restaurant.entity.stock;
 
+import restaurant.entity.menu.MenuItem;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,11 @@ public class Stock {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "menu_id")
+    private MenuItem menuItem;
+
+    @Column
     private Integer menuId;
 
     @Column
