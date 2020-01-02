@@ -1,39 +1,33 @@
 package restaurant.entity.personal;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
-public class Waiter implements Personal {
+import restaurant.entity.orders.Orders;
+import restaurant.entity.table.Table;
+import restaurant.service.TableService;
 
-	private String name;
-	private Date dateOfEmployment;
-	private Double salary;
+public class Waiter extends Personal implements Observer {
+
+    /*
+    ----- Waiter is OBSERVER -----
+    table notifies waiter when clients leave the table  -> update method -> "left" string
+    table notifies waiter when he's requested			-> update method -> "request" string
+    chef notifies waiter when the order is ready		-> update method -> Orders type object
+     */
+
 	List tables;
-	List invoices;
+	List orders;
 
 	public Waiter() {
-		this.dateOfEmployment = new Date();
+
+		super();
 	}
 
 	public Waiter(String name, Double salary) {
-		this.name = name;
-		this.salary = salary;
-		this.dateOfEmployment = new Date();
-		tables = new ArrayList<String>();
-		invoices = new ArrayList<String>();
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public Date getDateOfEmployment() {
-		return dateOfEmployment;
-	}
-
-	public Double getSalary() {
-		return salary;
+		super(name,salary);
+		super.setDateOfEmployment(new Date());
+		tables = new ArrayList<Table>();
+		orders = new ArrayList<Orders>();
 	}
 
 	public List getTables() {
@@ -41,16 +35,7 @@ public class Waiter implements Personal {
 	}
 
 	public List getInvoices() {
-		return invoices;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public void setSalary(Double salary) {
-		this.salary = salary;
+		return orders;
 	}
 
 	public void setTables(List tables) {
@@ -58,6 +43,55 @@ public class Waiter implements Personal {
 	}
 
 	public void setInvoices(List invoices) {
-		this.invoices = invoices;
+		this.orders = invoices;
+	}
+
+	public void addOrder(Orders o){
+		this.orders.add(o);
+		/*
+
+		NOTIFY CHEF
+
+		 */
+	}
+
+	public void generateReceipt(Table table){
+		Table thisTable = new Table();
+		for(Object t: this.tables){
+			if(t instanceof Table)
+				if(t.equals(table))
+					thisTable = (Table)t;
+		}
+		Orders thisOrder = new Orders();
+		for(Object o: this.orders){
+			if(o instanceof Orders)
+				if(((Orders) o).getTable().equals(thisTable.getId()))
+					thisOrder = (Orders)o;
+		}
+		Invoice i = new Invoice();
+		i.generate(thisOrder);
+
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		if (arg == null) {
+			System.out.println("NULL STRING -- update in Waiter");
+		} else {
+			if(arg instanceof String){
+				String message = (String)arg;
+				if(message.toLowerCase().equals("left"))
+					System.out.println("Thank you! Goodbye!");
+				else
+					if(message.toLowerCase().equals("request"))
+						System.out.println("On my way!");
+			}else
+				if(arg instanceof Orders){
+					Orders doneOrder = (Orders)arg;
+					for(Object ord : orders)
+						if(ord instanceof Orders)
+							if(((Orders)ord).equals(doneOrder))
+								orders.remove(doneOrder);
+				}
+		}
 	}
 }

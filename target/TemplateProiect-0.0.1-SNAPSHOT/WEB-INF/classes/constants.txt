@@ -1,3 +1,0 @@
--Tables:
-    -empty color: #00C64F
-    -not empty color: #E40000
