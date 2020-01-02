@@ -9,10 +9,9 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
-
-
 @Entity(name = "Waiter")
 public class Waiter extends Personal implements Observer {
+
 
     /*
     ----- Waiter is OBSERVER -----

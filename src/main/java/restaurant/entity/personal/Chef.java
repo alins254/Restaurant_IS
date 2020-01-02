@@ -11,6 +11,7 @@ import java.util.*;
 public class Chef extends Personal implements Observer {
 
 
+
 	/*
 	----- Chef is OBSERVER -----
 	table notifies chef when new order is placed 	-> update method
@@ -93,6 +94,7 @@ public class Chef extends Personal implements Observer {
 			setChanged();
 			notifyObservers(doneOrder);
 		}
+
 
 	}
 }
