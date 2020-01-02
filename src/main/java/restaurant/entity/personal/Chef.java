@@ -1,16 +1,16 @@
 package restaurant.entity.personal;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import restaurant.entity.orders.Orders;
 
-public class Chef extends Personal {
+import java.util.*;
+
+public class Chef extends Personal implements Observer { //informed when waiter has a new order
 
 	List orders;
 
 	public Chef() {
 		super();
-		orders = new ArrayList<String>();
+		orders = new ArrayList<Orders>();
 	}
 
 	public Chef(String name, Double salary){
@@ -26,4 +26,27 @@ public class Chef extends Personal {
 	public void setOrders(List orders) {
 		this.orders = orders;
 	}
-}
+
+	public void orderIsPrepared(Orders currentOrder){
+		for(Object o: orders){
+			if(o instanceof Orders){
+				if(currentOrder.equals(o)){
+					((Orders) o).setCompleted(true);
+					((Orders) o).prepared();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+
+	}
+
+	public void orderPrepared(){
+		orders.remove(0);
+		setChanged();
+		notifyObservers();
+	}
+	
+	}

@@ -1,8 +1,10 @@
 package restaurant.entity.personal;
 
 import java.util.Date;
+import java.util.Observable;
+import java.util.Observer;
 
-public abstract class Personal {
+public abstract class Personal extends Observable {
 
     private String id;
     private String name;
@@ -62,4 +64,15 @@ public abstract class Personal {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public synchronized void addObserver(Observer o) {
+        super.addObserver(o);
+    }
+
+    public void notifier(){
+
+    }
+
+
 }
