@@ -6,6 +6,7 @@ import restaurant.entity.orders.Orders;
 import restaurant.entity.table.Table;
 import restaurant.service.TableService;
 
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
@@ -36,6 +37,7 @@ public class Waiter extends Personal implements Observer {
 		//setType("waiter");
 		tables = new ArrayList<Table>();
 		orders = new ArrayList<Orders>();
+
 
 	}
 
@@ -73,6 +75,7 @@ public class Waiter extends Personal implements Observer {
 		i.generate(thisOrder);
 
 	}
+
 	@Override
 	public void update(Observable o, Object arg) {
 		if (arg == null) {
