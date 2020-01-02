@@ -2,7 +2,7 @@ package restaurant.entity.menu;
 
 import java.util.ArrayList;
 
-public class Menu implements MenuItem{
+public class Menu{
 
     private ArrayList<MenuItem> menu;
 
@@ -18,7 +18,6 @@ public class Menu implements MenuItem{
         this.menu = menu;
     }
 
-    @Override
     public String showMenuItemDetails() {
         String showMenu = "Menu";
 
