@@ -4,7 +4,9 @@ import restaurant.entity.orders.Orders;
 
 import java.util.*;
 
-public class Chef extends Personal implements Observer { //informed when waiter has a new order
+public class Chef extends Personal implements Observer {
+
+	/* table notifies chef when new order is placed  */
 
 	List orders;
 
@@ -48,5 +50,5 @@ public class Chef extends Personal implements Observer { //informed when waiter 
 		setChanged();
 		notifyObservers();
 	}
-	
+
 	}

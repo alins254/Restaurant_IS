@@ -70,9 +70,6 @@ public abstract class Personal extends Observable {
         super.addObserver(o);
     }
 
-    public void notifier(){
-
-    }
 
 
 }
