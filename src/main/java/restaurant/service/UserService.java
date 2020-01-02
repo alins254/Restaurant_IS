@@ -14,7 +14,7 @@ import restaurant.messages.Messages;
 import restaurant.messages.*;
 import restaurant.repository.UserRepo;
 
-public class UserService {
+public class  UserService {
 
 	private UserRepo userRepo = new UserRepo();
 
