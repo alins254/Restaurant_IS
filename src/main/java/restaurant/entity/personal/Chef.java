@@ -43,13 +43,19 @@ public class Chef extends Personal implements Observer {
 	//method for random order prepared
 =======
 >>>>>>> work in progress personal
+=======
+>>>>>>> work in progress personal
 	public void orderIsPrepared(Orders currentOrder){
 		for(Object o: orders){
 			if(o instanceof Orders){
 				if(currentOrder.equals(o)){
 					((Orders) o).setCompleted(true);
 <<<<<<< HEAD
+<<<<<<< HEAD
 					////////##################################################################((Orders) o).prepared();
+=======
+					((Orders) o).prepared();
+>>>>>>> work in progress personal
 =======
 					((Orders) o).prepared();
 >>>>>>> work in progress personal
@@ -58,6 +64,7 @@ public class Chef extends Personal implements Observer {
 		}
 	}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 */
 

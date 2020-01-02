@@ -80,6 +80,7 @@ public abstract class Personal extends Observable {
         this.type = type;
     }
 
+<<<<<<< HEAD
     public Account getAccount() {
         return account;
     }
@@ -87,5 +88,6 @@ public abstract class Personal extends Observable {
     public void setAccount(Account account) {
         this.account = account;
     }
+
 
 }

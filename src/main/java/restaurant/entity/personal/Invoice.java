@@ -5,7 +5,6 @@ import restaurant.entity.menu.Drinks;
 import restaurant.entity.menu.Menu;
 import restaurant.entity.menu.MenuItem;
 import restaurant.entity.orders.Orders;
-import restaurant.entity.table.Table;
 
 
 import java.io.File;
@@ -44,6 +43,11 @@ public class Invoice {
         return invoiceDate;
     }
 
+
+    public void setInvoiceDate(Date invoiceDate) {
+        this.invoiceDate = invoiceDate;
+    }
+
     public void generate(Orders order){
         PrintWriter pw = null;
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
@@ -54,7 +58,6 @@ public class Invoice {
             fileName+=new String(dateFormat.format(this.invoiceDate));
             fileName+=new String(".txt");
             pw = new PrintWriter(fileName, "UTF-8");
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

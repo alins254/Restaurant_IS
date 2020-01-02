@@ -7,7 +7,6 @@ import restaurant.entity.menu.Menu;
 import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Invoice;
 import restaurant.entity.personal.Waiter;
-
 import restaurant.service.UserService;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -26,12 +25,17 @@ public class ApplicationStart {
 >>>>>>> personal and invoice
 =======
 
+<<<<<<< HEAD
 >>>>>>> bug invoice solved
+=======
+		/*
+>>>>>>> work in progress personal
 		UserService userService = new UserService();
 		User user = new User();
 		user.setAge(18);
 		user.setName("Tufisi");
 		System.out.println(userService.addUser(user));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD

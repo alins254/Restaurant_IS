@@ -70,6 +70,7 @@ public class Orders extends Observable {
 
 	public void setMenuItems(List<Menu> menuItems) {this.menuItems = menuItems;}
 
+
 	public Boolean getCompleted() {
 		return completed;
 	}
