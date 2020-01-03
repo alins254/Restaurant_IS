@@ -1,9 +1,13 @@
 package restaurant.service;
 
 import restaurant.entity.Account;
+import restaurant.entity.menu.Dishes;
+import restaurant.entity.menu.Drinks;
+import restaurant.entity.menu.MenuItem;
 import restaurant.entity.personal.Chef;
 import restaurant.entity.personal.Personal;
 import restaurant.entity.personal.Waiter;
+import restaurant.entity.stock.Stock;
 import restaurant.repository.AdministratorRepo;
 
 import java.util.ArrayList;
@@ -51,6 +55,44 @@ public class AdministratorService {
         if(accounts == null)
             return new ArrayList<Personal>();
         return accounts;
+    }
+
+    public String addMenuItem(String name, Float price, String type, Integer pieces){
+        MenuItem m;
+        if(type.toLowerCase().equals("drinks")){
+            m = new Drinks(name, price);
+            m.setType("drinks");
+        }else if(type.toLowerCase().equals("dishes")){
+            m = new Dishes(name, price);
+            m.setType("dishes");
+        }else{
+            return "Type Incorrect!";
+        }
+
+        Stock s = new Stock(pieces);
+        s.setMenuItem(m);
+        s.setId(UUID.randomUUID().toString());
+        m.setId(UUID.randomUUID().toString());
+        m.setStock(s);
+        //return repo.addMenuItem(s, m);
+        return "";
+    }
+
+    public String removeMenuItem(MenuItem m){
+        //return repo.removeMenuItem(m);
+        return "";
+    }
+
+    public ArrayList<MenuItem> showAllMenuItems(){
+        ArrayList<MenuItem> accounts = null ;//= (ArrayList<MenuItem>) repo.showAllMenuItems();
+        if(accounts == null)
+            return new ArrayList<MenuItem>();
+        return accounts;
+    }
+
+    public String modifyStock(MenuItem m, Integer pieces){
+        //return repo.modifyStock(m.getStock().getId(), pieces);
+        return "";
     }
 
 }
