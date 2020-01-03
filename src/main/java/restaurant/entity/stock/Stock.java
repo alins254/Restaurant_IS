@@ -19,7 +19,7 @@ public class Stock {
 
     @Column
     private Integer quantity;
-
+    
     public Stock(){};
 
     public Stock(int quantity){
