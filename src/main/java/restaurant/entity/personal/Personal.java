@@ -1,15 +1,24 @@
 package restaurant.entity.personal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
 
-public abstract class Personal extends Observable {
+@Entity
+public class Personal extends Observable {
 
+    @Id
     private String id;
+    @Column
     private String name;
+    @Column
     private Date dateOfEmployment;
+    @Column
     private Double salary;
+    @Column
     private String type;
 
     public Personal(){
@@ -33,6 +42,7 @@ public abstract class Personal extends Observable {
         return salary;
     }
 
+    @Id
     public String getId() {
 
         return id;
@@ -64,6 +74,7 @@ public abstract class Personal extends Observable {
     public void setType(String type) {
         this.type = type;
     }
+
 
     /*
     @Override

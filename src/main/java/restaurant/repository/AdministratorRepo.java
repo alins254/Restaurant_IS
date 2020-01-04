@@ -1,15 +1,11 @@
 package restaurant.repository;
 
 import restaurant.entity.Account;
-import restaurant.entity.User;
 import restaurant.entity.personal.Personal;
+import restaurant.entity.personal.Waiter;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class AdministratorRepo {
@@ -70,12 +66,9 @@ public class AdministratorRepo {
         return "Success!";
     }
 
-    public Collection<Personal> showAllPersonal(){
+    public List<Personal> showAllPersonal(){
         EntityManager em = entityManagerFactory.createEntityManager();
-        em.getTransaction().begin();
-        Query query = em.createQuery("SELECT * FROM Personal");
-        em.getTransaction().commit();
-        em.close();
-        return (Collection<Personal>) query.getResultList();
+        Query query = em.createQuery("Select p FROM Personal p");
+        return (List<Personal>) query.getResultList();
     }
 }

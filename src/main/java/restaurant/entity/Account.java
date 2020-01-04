@@ -2,24 +2,26 @@ package restaurant.entity;
 
 import restaurant.entity.personal.Personal;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
 public class Account {
     @Id
     private String username;
     @Column
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "id_person")
+//    @OneToOne
+//    @JoinColumn(name = "id")
     private String person;
 
     public Account(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public Account() {
+
     }
 
     public String getUsername() {

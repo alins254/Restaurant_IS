@@ -24,7 +24,7 @@ public class TableService extends Observable{
 
     public void requestReceipt(){
         Waiter w = table.getWaiter();
-        w.generateReceipt(table);
+//        w.generateReceipt(table);
     }
 
     public void leaveTable(){

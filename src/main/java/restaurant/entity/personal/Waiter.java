@@ -6,6 +6,10 @@ import restaurant.entity.orders.Orders;
 import restaurant.entity.table.Table;
 import restaurant.service.TableService;
 
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Waiter extends Personal implements Observer {
 
     /*
@@ -15,8 +19,19 @@ public class Waiter extends Personal implements Observer {
     chef notifies waiter when the order is ready		-> update method -> Orders type object
      */
 
-	List tables;
-	List orders;
+//    @Transient
+//	List tables;
+//    @Transient
+//	List orders;
+
+	@Id
+	private String id;
+	@Column
+	private String name;
+	@Column
+	private Double salary;
+	@Column
+	private String type;
 
 	public Waiter() {
 
@@ -24,30 +39,30 @@ public class Waiter extends Personal implements Observer {
 	}
 
 	public Waiter(String name, Double salary) {
-		super(name,salary);
+		super(name, salary);
 		super.setDateOfEmployment(new Date());
-		tables = new ArrayList<Table>();
-		orders = new ArrayList<Orders>();
+//		tables = new ArrayList<Table>();
+//		orders = new ArrayList<Orders>();
 	}
 
-	public List getTables() {
-		return tables;
-	}
-
-	public List getInvoices() {
-		return orders;
-	}
-
-	public void setTables(List tables) {
-		this.tables = tables;
-	}
-
-	public void setInvoices(List invoices) {
-		this.orders = invoices;
-	}
-
+//	public List getTables() {
+//		return tables;
+//	}
+//
+//	public List getInvoices() {
+//		return orders;
+//	}
+//
+//	public void setTables(List tables) {
+//		this.tables = tables;
+//	}
+//
+//	public void setInvoices(List invoices) {
+//		this.orders = invoices;
+//	}
+//
 	public void addOrder(Orders o){
-		this.orders.add(o);
+//		this.orders.add(o);
 		/*
 
 		NOTIFY CHEF
@@ -56,42 +71,52 @@ public class Waiter extends Personal implements Observer {
 	}
 
 	public void generateReceipt(Table table){
-		Table thisTable = new Table();
-		for(Object t: this.tables){
-			if(t instanceof Table)
-				if(t.equals(table))
-					thisTable = (Table)t;
-		}
-		Orders thisOrder = new Orders();
-		for(Object o: this.orders){
-			if(o instanceof Orders)
-				if(((Orders) o).getTable().equals(thisTable.getId()))
-					thisOrder = (Orders)o;
-		}
-		Invoice i = new Invoice();
-		i.generate(thisOrder);
+//		Table thisTable = new Table();
+//		for(Object t: this.tables){
+//			if(t instanceof Table)
+//				if(t.equals(table))
+//					thisTable = (Table)t;
+//		}
+//		Orders thisOrder = new Orders();
+//		for(Object o: this.orders){
+//			if(o instanceof Orders)
+//				if(((Orders) o).getTable().equals(thisTable.getId()))
+//					thisOrder = (Orders)o;
+//		}
+//		Invoice i = new Invoice();
+//		i.generate(thisOrder);
 
 	}
 	@Override
 	public void update(Observable o, Object arg) {
-		if (arg == null) {
-			System.out.println("NULL STRING -- update in Waiter");
-		} else {
-			if(arg instanceof String){
-				String message = (String)arg;
-				if(message.toLowerCase().equals("left"))
-					System.out.println("Thank you! Goodbye!");
-				else
-					if(message.toLowerCase().equals("request"))
-						System.out.println("On my way!");
-			}else
-				if(arg instanceof Orders){
-					Orders doneOrder = (Orders)arg;
-					for(Object ord : orders)
-						if(ord instanceof Orders)
-							if(((Orders)ord).equals(doneOrder))
-								orders.remove(doneOrder);
-				}
-		}
+//		if (arg == null) {
+//			System.out.println("NULL STRING -- update in Waiter");
+//		} else {
+//			if(arg instanceof String){
+//				String message = (String)arg;
+//				if(message.toLowerCase().equals("left"))
+//					System.out.println("Thank you! Goodbye!");
+//				else
+//					if(message.toLowerCase().equals("request"))
+//						System.out.println("On my way!");
+//			}else
+//				if(arg instanceof Orders){
+//					Orders doneOrder = (Orders)arg;
+//					for(Object ord : orders)
+//						if(ord instanceof Orders)
+//							if(((Orders)ord).equals(doneOrder))
+//								orders.remove(doneOrder);
+//				}
+//		}
 	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	@Id
+	public String getId() {
+		return id;
+	}
+
 }

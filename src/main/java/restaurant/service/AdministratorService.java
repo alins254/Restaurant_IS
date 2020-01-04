@@ -13,15 +13,21 @@ public class AdministratorService {
 
     private AdministratorRepo repo;
 
+    public AdministratorService() {
+        repo = new AdministratorRepo();
+    }
+
     public Personal createNewPersonal(String name, Double salary, String type){
         Personal p;
         if(type.toLowerCase().equals("waiter")){
             p = new Waiter(name, salary);
+            p.setType("waiter");
         }else if(type.toLowerCase().equals("chef")){
             p = new Chef(name, salary);
+            p.setType("chef");
         }else
             return null;
-        //p.setId(UUID.randomUUID().toString());
+        p.setId(UUID.randomUUID().toString());
 
         return p;
     }
@@ -33,7 +39,7 @@ public class AdministratorService {
             return message;
 
         Account account = new Account(username, password);
-        //account.setPerson(personal.getId());
+        account.setPerson(personal.getId());
         return repo.addNewUser(account, personal);
     }
 
