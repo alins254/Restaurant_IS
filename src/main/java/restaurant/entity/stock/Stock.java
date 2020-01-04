@@ -22,6 +22,8 @@ public class Stock {
     
     public Stock(){};
 
+    public Stock(){};
+
     public Stock(int quantity){
         this.quantity = quantity;
     }
