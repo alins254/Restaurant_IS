@@ -3,8 +3,11 @@ package restaurant.entity.personal;
 import org.hibernate.criterion.Order;
 import restaurant.entity.orders.Orders;
 
+import javax.persistence.*;
 import java.util.*;
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Chef extends Personal implements Observer {
 
 	/*
@@ -14,26 +17,35 @@ public class Chef extends Personal implements Observer {
 	chef notifies waiter that the order is ready	-> orderPlaced method
 	*/
 
-	List orders;
+//	List orders;
+
+	@Id
+	private String id;
+	@Column
+	private String name;
+	@Column
+	private Double salary;
+	@Column
+	private String type;
 
 	public Chef() {
 		super();
-		orders = new ArrayList<Orders>();
+//		orders = new ArrayList<Orders>();
 	}
 
 	public Chef(String name, Double salary){
 		super(name, salary);
 		super.setDateOfEmployment(new Date());
-		orders = new ArrayList<String>();
+//		orders = new ArrayList<String>();
 	}
 
-	public List getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List orders) {
-		this.orders = orders;
-	}
+//	public List getOrders() {
+//		return orders;
+//	}
+//
+//	public void setOrders(List orders) {
+//		this.orders = orders;
+//	}
 
 	/*
 	//method for random order prepared
@@ -52,13 +64,13 @@ public class Chef extends Personal implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		if(arg == null)
-			System.out.println("NULL ORDER -- update in Chef");
-		else
-			if(arg instanceof Orders){
-				Orders newOrder = (Orders)arg;
-				orders.add(newOrder);
-		}
+//		if(arg == null)
+//			System.out.println("NULL ORDER -- update in Chef");
+//		else
+//			if(arg instanceof Orders){
+//				Orders newOrder = (Orders)arg;
+//				orders.add(newOrder);
+//		}
 	}
 
 	@Override
@@ -68,14 +80,14 @@ public class Chef extends Personal implements Observer {
 
 	//#####################
 	public void orderPrepared(){
-		if(orders == null)
-			System.out.println("No orders to prepare");
-		else{
-			Orders doneOrder = (Orders)orders.get(0);
-			orders.remove(0);
-			setChanged();
-			notifyObservers(doneOrder);
-		}
+//		if(orders == null)
+//			System.out.println("No orders to prepare");
+//		else{
+//			Orders doneOrder = (Orders)orders.get(0);
+//			orders.remove(0);
+//			setChanged();
+//			notifyObservers(doneOrder);
+//		}
 
 	}
     //#####################
