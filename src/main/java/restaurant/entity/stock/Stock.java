@@ -13,12 +13,14 @@ public class Stock {
     //@GeneratedValue(strategy= GenerationType.AUTO)
     private String id;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "menu_id")
+    @OneToOne(mappedBy = "stock")//(fetch = FetchType.EAGER)
+    //@JoinColumn(name = "menu_id")
     private MenuItem menuItem;
 
     @Column
     private Integer quantity;
+
+    public Stock(){};
 
     public Stock(int quantity){
         this.quantity = quantity;

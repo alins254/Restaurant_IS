@@ -3,8 +3,13 @@ package restaurant.entity.personal;
 import org.hibernate.criterion.Order;
 import restaurant.entity.orders.Orders;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 import java.util.*;
 
+@Entity(name = "Chef")
+@DiscriminatorValue("Chef")
 public class Chef extends Personal implements Observer {
 
 	/*
@@ -13,11 +18,12 @@ public class Chef extends Personal implements Observer {
 	----- Chef is OBSERVABLE -----
 	chef notifies waiter that the order is ready	-> orderPlaced method
 	*/
-
+	@Transient
 	List orders;
 
 	public Chef() {
 		super();
+		super.setType("chef");
 		orders = new ArrayList<Orders>();
 	}
 

@@ -1,16 +1,31 @@
 package restaurant.entity.personal;
 
+import restaurant.entity.Account;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Personal extends Observable {
 
+    @Id
     private String id;
+
+    @Column
     private String name;
+    @Column
     private Date dateOfEmployment;
+    @Column
     private Double salary;
+    @Column
     private String type;
+
+    @OneToOne
+    @JoinColumn(name="ACCOUNT_ID")
+    private Account account;
 
     public Personal(){
         dateOfEmployment = new Date();
@@ -73,6 +88,11 @@ public abstract class Personal extends Observable {
 
      */
 
+    public Account getAccount() {
+        return account;
+    }
 
-
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 }

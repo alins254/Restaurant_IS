@@ -15,7 +15,7 @@ import java.util.UUID;
 
 public class AdministratorService {
 
-    private AdministratorRepo repo;
+    private AdministratorRepo repo = new AdministratorRepo();
 
     public Personal createNewPersonal(String name, Double salary, String type){
         Personal p;
@@ -25,7 +25,7 @@ public class AdministratorService {
             p = new Chef(name, salary);
         }else
             return null;
-        //p.setId(UUID.randomUUID().toString());
+        p.setId(UUID.randomUUID().toString());
 
         return p;
     }
@@ -37,7 +37,8 @@ public class AdministratorService {
             return message;
 
         Account account = new Account(username, password);
-        //account.setPerson(personal.getId());
+        account.setPerson(personal);
+        personal.setAccount(account);
         return repo.addNewUser(account, personal);
     }
 

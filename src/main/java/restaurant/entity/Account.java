@@ -1,21 +1,23 @@
 package restaurant.entity;
 
+import javafx.scene.Parent;
 import restaurant.entity.personal.Personal;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity(name = "accounts")
 public class Account {
+
     @Id
     private String username;
     @Column
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "id_person")
-    private String person;
+    //@OneToOne(fetch=FetchType.LAZY, targetEntity = Parent.class)
+    @OneToOne(mappedBy = "account")
+    private Personal person;
+
+    public Account(){};
 
     public Account(String username, String password) {
         this.username = username;
@@ -38,11 +40,11 @@ public class Account {
         this.password = password;
     }
 
-    public String getPerson() {
+    public Personal getPerson() {
         return person;
     }
 
-    public void setPerson(String person) {
+    public void setPerson(Personal person) {
         this.person = person;
     }
 }
