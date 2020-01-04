@@ -2,7 +2,9 @@ package restaurant.repository;
 
 import restaurant.entity.Account;
 import restaurant.entity.User;
+import restaurant.entity.menu.MenuItem;
 import restaurant.entity.personal.Personal;
+import restaurant.entity.stock.Stock;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -77,5 +79,22 @@ public class AdministratorRepo {
         em.getTransaction().commit();
         em.close();
         return (Collection<Personal>) query.getResultList();
+    }
+
+    public String addMenuItem(Stock stock, MenuItem menuItem){
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+
+        entityManager.merge(stock);
+        entityManager.merge(menuItem);
+        
+        entityManager.getTransaction().commit();
+
+        entityManager.close();
+        return "Success!";
+    }
+
+    public String removeMenuItem(MenuItem menuItem){
+        return "Success!";
     }
 }
