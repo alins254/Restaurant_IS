@@ -27,14 +27,15 @@ public class OrdersRepo {
 
     public String removeOrder(String id){
         EntityManager em = entityManagerFactory.createEntityManager();
-        em.getTransaction().begin();
         OrdersTable order = em.find(OrdersTable.class, id);
-        em.getTransaction().commit();
+        em.getTransaction().begin();
         if(order == null){
             em.close();
             return "Order does not exist!";
         }
         em.remove(order);
+        em.getTransaction().commit();
+        em.close();
         return "Success!";
     }
 
