@@ -1,5 +1,4 @@
 package restaurant.service;
-
 import restaurant.entity.menu.MenuItem;
 import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Waiter;
@@ -11,7 +10,6 @@ import java.util.Objects;
 import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
-
 import java.util.Observable;
 
 public class TableService{

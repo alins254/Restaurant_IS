@@ -1,5 +1,6 @@
 package restaurant.entity.personal;
 
+import javafx.collections.ObservableList;
 import org.hibernate.criterion.Order;
 import restaurant.entity.orders.Orders;
 import javax.persistence.DiscriminatorValue;
