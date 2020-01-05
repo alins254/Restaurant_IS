@@ -21,7 +21,6 @@ import java.util.List;
 public class ApplicationStart {
 
 	public static void main(String[] args) {
-
 /*
 		UserService userService = new UserService();
 		User user = new User();
@@ -32,6 +31,5 @@ public class ApplicationStart {
 
 
 		TestService.test();
-        
 	}
 }

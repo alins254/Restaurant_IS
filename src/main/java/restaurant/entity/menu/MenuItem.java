@@ -18,7 +18,6 @@ public abstract class MenuItem {
     @Column
     private String type;
 
-
     @OneToOne
     @JoinColumn(name="STOCK_ID")
             //@OneToOne(mappedBy = "MenuItem", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
