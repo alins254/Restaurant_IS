@@ -39,10 +39,8 @@ public class AdministratorService {
             return message;
 
         Account account = new Account(username, password);
-
         account.setPerson(personal);
         personal.setAccount(account);
-
         return repo.addNewUser(account, personal);
     }
 
