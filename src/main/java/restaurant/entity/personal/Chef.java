@@ -1,7 +1,6 @@
 package restaurant.entity.personal;
 
-import org.hibernate.criterion.Order;
-import restaurant.entity.orders.Orders;
+import restaurant.entity.orders.OrdersTable;
 
 import java.util.*;
 
@@ -18,7 +17,7 @@ public class Chef extends Personal implements Observer {
 
 	public Chef() {
 		super();
-		orders = new ArrayList<Orders>();
+		orders = new ArrayList<OrdersTable>();
 	}
 
 	public Chef(String name, Double salary){
@@ -55,8 +54,8 @@ public class Chef extends Personal implements Observer {
 		if(arg == null)
 			System.out.println("NULL ORDER -- update in Chef");
 		else
-			if(arg instanceof Orders){
-				Orders newOrder = (Orders)arg;
+			if(arg instanceof OrdersTable){
+				OrdersTable newOrder = (OrdersTable)arg;
 				orders.add(newOrder);
 		}
 	}
@@ -71,7 +70,7 @@ public class Chef extends Personal implements Observer {
 		if(orders == null)
 			System.out.println("No orders to prepare");
 		else{
-			Orders doneOrder = (Orders)orders.get(0);
+			OrdersTable doneOrder = (OrdersTable)orders.get(0);
 			orders.remove(0);
 			setChanged();
 			notifyObservers(doneOrder);

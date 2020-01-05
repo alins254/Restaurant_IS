@@ -4,7 +4,7 @@ import restaurant.entity.User;
 import restaurant.entity.menu.Dishes;
 import restaurant.entity.menu.Drinks;
 import restaurant.entity.menu.Menu;
-import restaurant.entity.orders.Orders;
+import restaurant.entity.orders.OrdersTable;
 import restaurant.entity.personal.Invoice;
 import restaurant.entity.personal.Waiter;
 import restaurant.service.UserService;

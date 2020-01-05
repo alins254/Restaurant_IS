@@ -17,8 +17,9 @@ public abstract class MenuItem {
     @Column
     private String type;
 
-    @OneToOne(mappedBy = "MenuItem", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
+//    @OneToOne(mappedBy = "MenuItem", cascade = CascadeType.ALL,
+//            fetch = FetchType.LAZY)
+    @Transient
     private Stock stock;
 
     public String getName() {

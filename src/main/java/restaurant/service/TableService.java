@@ -1,9 +1,8 @@
 package restaurant.service;
-import restaurant.entity.orders.Orders;
+import restaurant.entity.orders.OrdersTable;
 import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
 
-import java.util.Objects;
 import java.util.Observable;
 
 public class TableService extends Observable{
@@ -16,7 +15,7 @@ public class TableService extends Observable{
      */
 
     private Table table;
-    public void orderFood(Orders orderedFood){
+    public void orderFood(OrdersTable orderedFood){
         table.setOccupied(true);
         setChanged();
         notifyObservers(orderedFood); //chef?

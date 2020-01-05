@@ -3,11 +3,8 @@ package restaurant.entity.personal;
 import restaurant.entity.menu.Dishes;
 import restaurant.entity.menu.Drinks;
 import restaurant.entity.menu.Menu;
-import restaurant.entity.menu.MenuItem;
-import restaurant.entity.orders.Orders;
-import restaurant.service.Table;
+import restaurant.entity.orders.OrdersTable;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -25,7 +22,7 @@ public class Invoice {
         invoiceDate = new Date();
     }
 
-    public Double calculateTotal(Orders order){
+    public Double calculateTotal(OrdersTable order){
         List items = new ArrayList<Menu>();
         items.addAll(order.getMenuItems());
         double price = 0.0;
@@ -46,7 +43,7 @@ public class Invoice {
         this.invoiceDate = invoiceDate;
     }
 
-    public void generate(Orders order){
+    public void generate(OrdersTable order){
         PrintWriter pw = null;
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 

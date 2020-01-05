@@ -12,8 +12,9 @@ public class Stock {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "menu_id")
+//    @OneToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "menu_id")
+    @Transient
     private MenuItem menuItem;
 
     @Column
