@@ -10,7 +10,7 @@ public class OrdersValidator {
 
     public static String orderTableValidation(Integer table){
         String message = new String("");
-        if (table < 0 || table > 12)
+        if (table < 0 || table > 13)
             message += "Table is not in range 1 to 12.";
         return message;
     }
