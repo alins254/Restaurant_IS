@@ -21,7 +21,7 @@ public class AdministratorService {
             p = new Chef(name, salary);
         }else
             return null;
-        //p.setId(UUID.randomUUID().toString());
+        p.setId(UUID.randomUUID().toString());
 
         return p;
     }
@@ -33,7 +33,7 @@ public class AdministratorService {
             return message;
 
         Account account = new Account(username, password);
-        //account.setPerson(personal.getId());
+        account.setPerson(personal.getId());
         return repo.addNewUser(account, personal);
     }
 
