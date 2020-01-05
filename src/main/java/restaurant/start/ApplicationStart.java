@@ -8,6 +8,7 @@ import restaurant.entity.menu.MenuItem;
 import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Chef;
 import restaurant.entity.personal.Invoice;
+import restaurant.entity.personal.Personal;
 import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
 import restaurant.service.TableService;
@@ -28,8 +29,6 @@ public class ApplicationStart {
 		user.setName("Tufisi");
 		System.out.println(userService.addUser(user));
 		 */
-
-
 		TestService.test();
 	}
 }
