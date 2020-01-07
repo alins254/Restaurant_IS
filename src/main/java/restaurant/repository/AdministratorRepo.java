@@ -40,8 +40,11 @@ public class AdministratorRepo {
         /**
          * Declaram operatia sau operatiile ce se vor face pe BD.
          */
-        entityManager.merge(personal);
+        Account acc = entityManager.find(Account.class, account.getUsername());
+        if(acc != null)
+            return "Username already exists!";
         entityManager.merge(account);
+        entityManager.merge(personal);
         /**
          * Executam operatia.
          */
@@ -73,9 +76,9 @@ public class AdministratorRepo {
     public Collection<Personal> showAllPersonal(){
         EntityManager em = entityManagerFactory.createEntityManager();
         em.getTransaction().begin();
-        Query query = em.createQuery("SELECT * FROM Personal");
+        Query query = em.createQuery("SELECT p FROM Personal p");
         em.getTransaction().commit();
-        em.close();
+        //em.close();
         return (Collection<Personal>) query.getResultList();
     }
 }

@@ -6,6 +6,12 @@ import restaurant.entity.orders.Orders;
 import restaurant.entity.table.Table;
 import restaurant.service.TableService;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Transient;
+
+@Entity(name = "Waiter")
+@DiscriminatorValue("Waiter")
 public class Waiter extends Personal implements Observer {
 
     /*
@@ -15,7 +21,9 @@ public class Waiter extends Personal implements Observer {
     chef notifies waiter when the order is ready		-> update method -> Orders type object
      */
 
+    @Transient
 	List tables;
+    @Transient
 	List orders;
 
 	public Waiter() {
@@ -26,6 +34,7 @@ public class Waiter extends Personal implements Observer {
 	public Waiter(String name, Double salary) {
 		super(name,salary);
 		super.setDateOfEmployment(new Date());
+		super.setType("waiter");
 		tables = new ArrayList<Table>();
 		orders = new ArrayList<Orders>();
 	}

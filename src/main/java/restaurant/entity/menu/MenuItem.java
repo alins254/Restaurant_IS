@@ -4,11 +4,11 @@ import restaurant.entity.stock.Stock;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "Menu")
 public abstract class MenuItem {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    //@GeneratedValue(strategy=GenerationType.AUTO)
+    private String id;
 
     @Column
     private String name;
@@ -17,8 +17,10 @@ public abstract class MenuItem {
     @Column
     private String type;
 
-    @OneToOne(mappedBy = "MenuItem", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
+
+    @OneToOne
+    @JoinColumn(name="STOCK_ID")
+            //@OneToOne(mappedBy = "MenuItem", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Stock stock;
 
     public String getName() {
@@ -45,11 +47,21 @@ public abstract class MenuItem {
         this.type = type;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
+    public void setId(String id){ this.id = id; }
+
     public String showMenuItemDetails(){
         return this.type + this.name + " has price " + this.price;
+    }
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
     }
 }

@@ -5,42 +5,33 @@ import restaurant.entity.menu.MenuItem;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
 //scoatem composite. menuitem abstracta(nume, pret , tip ,id). stock(id, id menu, quant).
 @Entity
 public class Stock {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+    //@GeneratedValue(strategy= GenerationType.AUTO)
+    private String id;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "menu_id")
+    @OneToOne(mappedBy = "stock")//(fetch = FetchType.EAGER)
+    //@JoinColumn(name = "menu_id")
     private MenuItem menuItem;
-
-    @Column
-    private Integer menuId;
 
     @Column
     private Integer quantity;
 
-    public Stock(int menuId, int quantity){
-        this.menuId = menuId;
+    public Stock(){};
+
+    public Stock(int quantity){
         this.quantity = quantity;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public Integer getMenuId() {
-        return menuId;
-    }
-
-    public void setMenuId(Integer menuId) {
-        this.menuId = menuId;
     }
 
     public Integer getQuantity() {
@@ -50,4 +41,14 @@ public class Stock {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+    public MenuItem getMenuItem() {
+        return menuItem;
+    }
+
+    public void setMenuItem(MenuItem menuItem) {
+        this.menuItem = menuItem;
+    }
+
+
 }
