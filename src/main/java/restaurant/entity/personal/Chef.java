@@ -9,7 +9,6 @@ import javax.persistence.Transient;
 import java.util.*;
 
 @Entity(name = "Chef")
-@DiscriminatorValue("Chef")
 public class Chef extends Personal implements Observer {
 
 	/*
@@ -23,7 +22,7 @@ public class Chef extends Personal implements Observer {
 
 	public Chef() {
 		super();
-		super.setType("chef");
+		//super.setType("chef");
 		orders = new ArrayList<Orders>();
 	}
 

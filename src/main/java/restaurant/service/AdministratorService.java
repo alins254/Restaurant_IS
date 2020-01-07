@@ -21,8 +21,10 @@ public class AdministratorService {
         Personal p;
         if(type.toLowerCase().equals("waiter")){
             p = new Waiter(name, salary);
+            p.setType("waiter");
         }else if(type.toLowerCase().equals("chef")){
             p = new Chef(name, salary);
+            p.setType("chef");
         }else
             return null;
         p.setId(UUID.randomUUID().toString());
