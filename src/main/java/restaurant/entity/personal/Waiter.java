@@ -83,8 +83,7 @@ public class Waiter extends Personal implements Observer {
 		if (arg == null) {
 			System.out.println("NULL STRING -- update in Waiter");
 		} else {
-
-			if(arg instanceof String){
+			if(arg instanceof String && o instanceof TableService){
 				String message = (String)arg;
 				if(message.toLowerCase().equals("left"))
 					System.out.println("Thank you! Goodbye!");
@@ -92,12 +91,15 @@ public class Waiter extends Personal implements Observer {
 					if(message.toLowerCase().equals("request"))
 						System.out.println("On my way!");
 			}else
-				if(arg instanceof Orders){
+				if(arg instanceof Orders && o instanceof Chef){
 					Orders doneOrder = (Orders)arg;
 					for(Object ord : orders)
-						if(ord instanceof Orders)
-							if(((Orders)ord).equals(doneOrder))
-								orders.remove(doneOrder);
+                        if(((Orders)ord).equals(doneOrder)){
+                            System.out.println("chef prepared your order");
+                            orders.remove(doneOrder);
+                            break;
+                        }
+
 				}
 		}
 	}
