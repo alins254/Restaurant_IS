@@ -48,6 +48,14 @@ public class Waiter extends Personal implements Observer {
 		this.tables = tables;
 	}
 
+	public List getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List orders) {
+		this.orders = orders;
+	}
+
 	public void addOrder(Orders o) {
 		this.orders.add(o);
 		/*

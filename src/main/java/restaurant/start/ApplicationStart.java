@@ -33,11 +33,11 @@ public class ApplicationStart {
 		 */
 
 
-		TestService.test();
+		//TestService.test();
 
 
-
-        /*
+        System.out.println("test");
+/*
         Waiter w = new Waiter();
 		Chef c = new Chef();
 
@@ -66,7 +66,7 @@ public class ApplicationStart {
 		System.out.println(c.getOrders());
 
 		Table t = new Table();
-		TableService ts = new TableService();
+		TableService ts = new TableService(t);
 		ts.setTable(t);
 		System.out.println(ts.getTable().getOccupied());
 
@@ -88,7 +88,9 @@ public class ApplicationStart {
 
 		w.setTables(list);
 		w.setOrders(list2);
-         */
+
+ */
+
         
 	}
 }
