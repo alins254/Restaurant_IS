@@ -1,7 +1,6 @@
 package restaurant.entity.personal;
 
 import java.util.*;
-
 import restaurant.entity.orders.Orders;
 import restaurant.entity.table.Table;
 import restaurant.service.TableService;
@@ -10,8 +9,10 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
+
 @Entity(name = "Waiter")
 public class Waiter extends Personal implements Observer {
+
 
     /*
     ----- Waiter is OBSERVER -----
@@ -36,31 +37,29 @@ public class Waiter extends Personal implements Observer {
 		//setType("waiter");
 		tables = new ArrayList<Table>();
 		orders = new ArrayList<Orders>();
+
 	}
 
 	public List getTables() {
 		return tables;
 	}
 
-	public List getInvoices() {
-		return orders;
-	}
-
 	public void setTables(List tables) {
 		this.tables = tables;
 	}
 
-	public void setInvoices(List invoices) {
-		this.orders = invoices;
+	public List getOrders() {
+		return orders;
 	}
 
-	public void addOrder(Orders o){
+	public void setOrders(List orders) {
+		this.orders = orders;
+	}
+	public void addOrder(Orders o) {
 		this.orders.add(o);
-		/*
-
-		NOTIFY CHEF
-
-		 */
+	}
+	public List getInvoices() {
+		return orders;
 	}
 
 	public void generateReceipt(Table table){
@@ -80,12 +79,13 @@ public class Waiter extends Personal implements Observer {
 		i.generate(thisOrder);
 
 	}
+
 	@Override
 	public void update(Observable o, Object arg) {
 		if (arg == null) {
 			System.out.println("NULL STRING -- update in Waiter");
 		} else {
-			if(arg instanceof String){
+			if(arg instanceof String && o instanceof Table){
 				String message = (String)arg;
 				if(message.toLowerCase().equals("left"))
 					System.out.println("Thank you! Goodbye!");
@@ -93,13 +93,17 @@ public class Waiter extends Personal implements Observer {
 					if(message.toLowerCase().equals("request"))
 						System.out.println("On my way!");
 			}else
-				if(arg instanceof Orders){
+				if(arg instanceof Orders && o instanceof Chef){
 					Orders doneOrder = (Orders)arg;
 					for(Object ord : orders)
-						if(ord instanceof Orders)
-							if(((Orders)ord).equals(doneOrder))
-								orders.remove(doneOrder);
+                        if(((Orders)ord).equals(doneOrder)){
+                            System.out.println("chef prepared your order");
+                            orders.remove(doneOrder);
+                            break;
+                        }
+
 				}
 		}
 	}
+
 }

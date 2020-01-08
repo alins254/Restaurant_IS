@@ -27,6 +27,7 @@ public abstract class Personal extends Observable {
     @JoinColumn(name="ACCOUNT_ID")
     private Account account;
 
+
     public Personal(){
         dateOfEmployment = new Date();
     }
@@ -80,14 +81,6 @@ public abstract class Personal extends Observable {
         this.type = type;
     }
 
-    /*
-    @Override
-    public synchronized void addObserver(Observer o) {
-        super.addObserver(o);
-    }
-
-     */
-
     public Account getAccount() {
         return account;
     }
@@ -95,4 +88,6 @@ public abstract class Personal extends Observable {
     public void setAccount(Account account) {
         this.account = account;
     }
+
+
 }

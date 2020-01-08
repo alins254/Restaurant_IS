@@ -5,7 +5,6 @@ import restaurant.entity.menu.Drinks;
 import restaurant.entity.menu.Menu;
 import restaurant.entity.menu.MenuItem;
 import restaurant.entity.orders.Orders;
-import restaurant.entity.table.Table;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,6 +40,7 @@ public class Invoice {
     public Date getInvoiceDate() {
         return invoiceDate;
     }
+
 
     public void setInvoiceDate(Date invoiceDate) {
         this.invoiceDate = invoiceDate;

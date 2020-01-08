@@ -2,10 +2,13 @@ package restaurant.entity.personal;
 
 import org.hibernate.criterion.Order;
 import restaurant.entity.orders.Orders;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
+
+import restaurant.entity.table.Table;
+import restaurant.service.TableService;
+
 import java.util.*;
 
 @Entity(name = "Chef")
@@ -22,7 +25,6 @@ public class Chef extends Personal implements Observer {
 
 	public Chef() {
 		super();
-		//super.setType("chef");
 		orders = new ArrayList<Orders>();
 	}
 
@@ -40,29 +42,16 @@ public class Chef extends Personal implements Observer {
 		this.orders = orders;
 	}
 
-	/*
-	//method for random order prepared
-	public void orderIsPrepared(Orders currentOrder){
-		for(Object o: orders){
-			if(o instanceof Orders){
-				if(currentOrder.equals(o)){
-					((Orders) o).setCompleted(true);
-					////////##################################################################((Orders) o).prepared();
-				}
-			}
-		}
-	}
-
-	 */
-
 	@Override
 	public void update(Observable o, Object arg) {
 		if(arg == null)
 			System.out.println("NULL ORDER -- update in Chef");
 		else
-			if(arg instanceof Orders){
+			if(arg instanceof Orders && o instanceof Table){
+
 				Orders newOrder = (Orders)arg;
 				orders.add(newOrder);
+                System.out.println("New order added in chef's list");
 		}
 	}
 
@@ -73,7 +62,7 @@ public class Chef extends Personal implements Observer {
 
 	//#####################
 	public void orderPrepared(){
-		if(orders == null)
+		if(orders.isEmpty())
 			System.out.println("No orders to prepare");
 		else{
 			Orders doneOrder = (Orders)orders.get(0);
@@ -81,7 +70,6 @@ public class Chef extends Personal implements Observer {
 			setChanged();
 			notifyObservers(doneOrder);
 		}
-
 	}
-    //#####################
 }
+
