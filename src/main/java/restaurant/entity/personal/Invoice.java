@@ -4,9 +4,7 @@ import restaurant.entity.menu.Dishes;
 import restaurant.entity.menu.Drinks;
 import restaurant.entity.menu.Menu;
 
-import restaurant.entity.menu.MenuItem;
-import restaurant.entity.table.Table;
-import restaurant.entity.orders.OrdersTable;
+import restaurant.entity.orders.Orders;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -25,7 +23,7 @@ public class Invoice {
         invoiceDate = new Date();
     }
 
-    public Double calculateTotal(OrdersTable order){
+    public Double calculateTotal(Orders order){
         List items = new ArrayList<Menu>();
         items.addAll(order.getMenuItems());
         double price = 0.0;
@@ -46,7 +44,7 @@ public class Invoice {
         this.invoiceDate = invoiceDate;
     }
 
-    public void generate(OrdersTable order){
+    public void generate(Orders order){
         PrintWriter pw = null;
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 

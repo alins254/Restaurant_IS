@@ -1,8 +1,7 @@
 package restaurant.entity.personal;
 
-import restaurant.entity.orders.OrdersTable;
+import restaurant.entity.orders.Orders;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.*;
@@ -22,7 +21,7 @@ public class Chef extends Personal implements Observer {
 	public Chef() {
 		super();
 		//super.setType("chef");
-		orders = new ArrayList<OrdersTable>();
+		orders = new ArrayList<Orders>();
 	}
 
 	public Chef(String name, Double salary){
@@ -59,8 +58,8 @@ public class Chef extends Personal implements Observer {
 		if(arg == null)
 			System.out.println("NULL ORDER -- update in Chef");
 		else
-			if(arg instanceof OrdersTable){
-				OrdersTable newOrder = (OrdersTable)arg;
+			if(arg instanceof Orders){
+				Orders newOrder = (Orders)arg;
 				orders.add(newOrder);
 		}
 	}
@@ -75,7 +74,7 @@ public class Chef extends Personal implements Observer {
 		if(orders == null)
 			System.out.println("No orders to prepare");
 		else{
-			OrdersTable doneOrder = (OrdersTable)orders.get(0);
+			Orders doneOrder = (Orders)orders.get(0);
 			orders.remove(0);
 			setChanged();
 			notifyObservers(doneOrder);

@@ -1,11 +1,12 @@
 package restaurant.entity.personal;
 
 import restaurant.entity.Account;
+import restaurant.entity.orders.Orders;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Observable;
-import java.util.Observer;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -26,6 +27,9 @@ public abstract class Personal extends Observable {
     @OneToOne
     @JoinColumn(name="ACCOUNT_ID")
     private Account account;
+
+    @OneToMany(mappedBy = "waiter", cascade = CascadeType.ALL)
+    private List<Orders> orders;
 
     public Personal(){
         dateOfEmployment = new Date();

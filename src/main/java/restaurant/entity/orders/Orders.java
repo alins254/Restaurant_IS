@@ -1,15 +1,18 @@
 package restaurant.entity.orders;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import restaurant.entity.menu.Menu;
 import restaurant.entity.menu.MenuItem;
 import restaurant.entity.personal.Waiter;
 
 import javax.persistence.*;
 
 @Entity
-public class OrdersTable {
+public class Orders {
 
 	@Id
 	private String id;
@@ -23,23 +26,21 @@ public class OrdersTable {
 	@Column
 	private Date placedAt;
 
-	//	@ManyToMany(cascade = { CascadeType.ALL })
-//  @JoinTable(
-//    name = "Orders_MenuItem",
-//    joinColumns = { @JoinColumn(name = "orders_id") },
-//    inverseJoinColumns = { @JoinColumn(name = "menuitem_id") }
-//  )
-	@Transient
+	@ManyToMany(cascade = { CascadeType.ALL })
+	@JoinTable(
+		name = "Orders_Menu",
+		joinColumns = { @JoinColumn(name = "orders_id") },
+		inverseJoinColumns = { @JoinColumn(name = "menu_id") })
+//	@Column
 	private List<MenuItem> menuItems;
 
-//	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Waiter.class)
-//	@JoinColumn(name="waiter_id")
-	@Transient
+	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Waiter.class)
+	@JoinColumn(name="waiter_id")
 	private Waiter waiter;
 
-	public OrdersTable() {}
+	public Orders() {}
 
-	public OrdersTable(Integer table, Waiter waiter, List<MenuItem> menuItems, Float price) {
+	public Orders(Integer table, Waiter waiter, ArrayList<MenuItem> menuItems, Float price) {
 		this.tableOfOrder = table;
 		this.waiter = waiter;
 		this.menuItems = menuItems;
@@ -67,6 +68,6 @@ public class OrdersTable {
 
 	public List<MenuItem> getMenuItems() {return menuItems;}
 
-	public void setMenuItems(List<MenuItem> menuItems) {this.menuItems = menuItems;}
+	public void setMenuItems(ArrayList<MenuItem> menuItems) {this.menuItems = menuItems;}
 
 }

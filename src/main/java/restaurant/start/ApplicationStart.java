@@ -1,22 +1,12 @@
 package restaurant.start;
 
-import restaurant.entity.User;
-import restaurant.entity.menu.Dishes;
-import restaurant.entity.menu.Drinks;
 import restaurant.entity.menu.MenuItem;
-import restaurant.entity.orders.OrdersTable;
-import restaurant.entity.personal.Invoice;
 import restaurant.entity.personal.Personal;
 import restaurant.entity.personal.Waiter;
 import restaurant.service.AdministratorService;
 import restaurant.service.OrdersService;
-import restaurant.service.UserService;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class ApplicationStart {
 
@@ -31,7 +21,6 @@ public class ApplicationStart {
 //		user.setName("Tufisi");
 //		System.out.println(userService.addUser(user));
 		TestService.test();
-		System.out.println("Success!");
 
 	}
 }

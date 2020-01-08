@@ -5,10 +5,8 @@ import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
 
 import java.util.ArrayList;
-import java.util.Objects;
-import restaurant.entity.orders.OrdersTable;
-import restaurant.entity.personal.Waiter;
-import restaurant.entity.table.Table;
+
+import restaurant.entity.orders.Orders;
 
 import java.util.Observable;
 
@@ -28,7 +26,7 @@ public class TableService extends Observable{
         this.table = table;
     }
 
-    public void orderFood(OrdersTable orderedFood){
+    public void orderFood(Orders orderedFood){
         table.setOccupied(true);
         setChanged();
         notifyObservers(orderedFood); //chef?

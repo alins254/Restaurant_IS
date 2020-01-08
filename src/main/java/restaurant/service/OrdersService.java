@@ -1,16 +1,11 @@
 package restaurant.service;
 
 import restaurant.entity.menu.MenuItem;
-import restaurant.entity.orders.OrdersTable;
-import restaurant.entity.personal.Personal;
+import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Waiter;
 import restaurant.repository.OrdersRepo;
 
-import javax.persistence.EntityManager;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class OrdersService {
 
@@ -20,21 +15,25 @@ public class OrdersService {
         ordersRepo = new OrdersRepo();
     }
 
-    public String addNewOrder(Integer table, Waiter waiter, List<MenuItem> menuItems){
+    public String addNewOrder(Integer table, Waiter waiter, ArrayList<MenuItem> menuItems){
 
         Float totalPrice = 0.0f;
         String message = OrdersValidator.orderTableValidation(table);
         message += OrdersValidator.orderWaiterValidation(waiter);
         message += OrdersValidator.orderListValidation(menuItems);
 
-        for (MenuItem m : menuItems)
+        for (MenuItem m : menuItems){
             totalPrice += m.getPrice();
+        }
 
         if(!message.equals(""))
             return message;
 
-        OrdersTable order = new OrdersTable(table, waiter, menuItems, totalPrice);
+        Orders order = new Orders(table, waiter, menuItems, totalPrice);
         order.setId(UUID.randomUUID().toString());
+        for(MenuItem m: menuItems){
+            m.getOrders().add(order);
+        }
         ordersRepo.addNewOrder(order);
         return message;
     }
@@ -46,11 +45,11 @@ public class OrdersService {
 
     }
 
-    public ArrayList<OrdersTable> showAllOrders(){
-        ArrayList<OrdersTable> orders = (ArrayList<OrdersTable>) ordersRepo.showAllOrders();
+    public ArrayList<Orders> showAllOrders(){
+        ArrayList<Orders> orders = (ArrayList<Orders>) ordersRepo.showAllOrders();
 
         if (orders == null)
-            return new ArrayList<OrdersTable>();
+            return new ArrayList<Orders>();
 
         return orders;
     }

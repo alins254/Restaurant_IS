@@ -4,6 +4,8 @@ import restaurant.entity.menu.MenuItem;
 import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class OrdersValidator {
@@ -22,7 +24,7 @@ public class OrdersValidator {
         return message;
     }
 
-    public static String orderListValidation(List<MenuItem> menuItems){
+    public static String orderListValidation(ArrayList<MenuItem> menuItems){
         String message = new String("");
         if (menuItems.isEmpty())
             message += "Order should have at least one menu item.";
