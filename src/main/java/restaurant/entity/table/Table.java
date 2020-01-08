@@ -8,7 +8,7 @@ import java.util.Observable;
 public class Table extends Observable {
 
     private String id;
-    private Waiter waiter;
+    private Waiter waiter = null;
     private boolean isOccupied = false;
 
     public Table(){}
@@ -16,6 +16,8 @@ public class Table extends Observable {
     public Table(Waiter waiter) {this.waiter = waiter;}
 
     public String getId(){return id;}
+
+    public void setId(String id){this.id = id;}
 
     public Waiter getWaiter(){return waiter;}
 

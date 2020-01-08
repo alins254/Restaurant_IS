@@ -14,7 +14,7 @@ public class Account {
     private String password;
 
     //@OneToOne(fetch=FetchType.LAZY, targetEntity = Parent.class)
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
     private Personal person;
 
     public Account(){};

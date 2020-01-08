@@ -1,8 +1,12 @@
 package restaurant.entity.menu;
 
+import javax.persistence.Entity;
 import java.util.ArrayList;
 
+@Entity
 public class Dishes extends MenuItem {
+
+    public Dishes(){};
 
     public Dishes(String name, Float price){
         this.setName(name);

@@ -3,9 +3,8 @@ package restaurant.repository;
 import restaurant.entity.Account;
 import restaurant.entity.personal.Personal;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.util.*;
 
 public class LoginRepo {
 
@@ -29,8 +28,9 @@ public class LoginRepo {
             return null;
         }
         em.getTransaction().begin();
-        Personal person = em.find(Personal.class, toFind.getPerson());
+        Query q = em.createQuery("SELECT p FROM Personal p WHERE ACCOUNT_ID = " + account.getUsername());
         em.getTransaction().commit();
+        Personal person = (Personal) q.getResultList().get(0);
         em.close();
         if(person == null)
              return null;
