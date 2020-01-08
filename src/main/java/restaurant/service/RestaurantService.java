@@ -10,6 +10,9 @@ public class RestaurantService {
 
     private static ArrayList<Table> tables;
     private static ArrayList<Waiter> activeWaiters = new ArrayList<Waiter>();
+    private static Chef chef = null;
+
+    public RestaurantService(){}
 
     public RestaurantService(int numberOfTables){
         if(numberOfTables<=0)
@@ -50,5 +53,16 @@ public class RestaurantService {
         }
     }
 
+    public void setChef(Chef chef){
+        this.chef=chef;
+        for(Table t:tables)
+            t.addObserver(chef);
+    }
 
+    public void removeChef(){
+        if(chef == null)
+            return;
+        for(Table t:tables)
+            t.deleteObserver(chef);
+    }
 }
