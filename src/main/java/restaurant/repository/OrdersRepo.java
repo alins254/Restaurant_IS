@@ -18,7 +18,7 @@ public class OrdersRepo {
         entityManager.merge(order);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return "Success!";
+        return "Order was successfully added!";
     }
 
     public String removeOrder(String id){
@@ -27,12 +27,12 @@ public class OrdersRepo {
         em.getTransaction().begin();
         if(order == null){
             em.close();
-            return "Order does not exist!";
+            return "Order does not exist! Failed to remove order!";
         }
         em.remove(order);
         em.getTransaction().commit();
         em.close();
-        return "Success!";
+        return "Successfully removed order!";
     }
 
     public List<Orders> showAllOrders(){

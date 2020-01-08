@@ -5,13 +5,10 @@ import restaurant.entity.table.Table;
 
 import java.util.ArrayList;
 
-import java.util.Objects;
 import restaurant.entity.orders.Orders;
-import restaurant.entity.personal.Waiter;
-import restaurant.entity.table.Table;
 import java.util.Observable;
 
-public class TableService{
+public class TableService extends Observable {
 
 
     private Table table;
