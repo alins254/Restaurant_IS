@@ -9,46 +9,52 @@ import restaurant.entity.menu.Menu;
 import restaurant.entity.menu.MenuItem;
 import restaurant.entity.personal.Waiter;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 
-//@Entity
+@Entity
 public class Orders {
 
-//	@Id
+	@Id
 	private String id;
 
-//	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Waiter.class)
-//	@JoinColumn(name="waiter_id")
-//	@Transient
-	private Waiter waiter;
+	@Column
+	private String tableOfOrder;
 
-//	@Column
-	private String table; //integer?
-
-//	@Column
+	@Column
 	private Float totalPrice;
 
-//	@Column
+	@Column
 	private Date placedAt;
 
-//	@ManyToMany(mappedBy = "order",fetch = FetchType.EAGER)
-//	@Transient
+	@ManyToMany(cascade = { CascadeType.ALL })
+	@JoinTable(
+		name = "Orders_Menu",
+		joinColumns = { @JoinColumn(name = "orders_id") },
+		inverseJoinColumns = { @JoinColumn(name = "menu_id") })
 	private List<MenuItem> menuItems;
-	/*
-	astea nu sunt instantiate in constructor, o sa-mi dea eroare (zic eu) cand o sa fac
-	getMenuItems in invoice
-	 */
+
+	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Waiter.class)
+	@JoinColumn(name="waiter_id")
+	private Waiter waiter;
 
 	private Boolean completed;
 
-	public Orders() {}
-
 	public Orders(String table, Waiter waiter, List<MenuItem> menuItems) {
-		this.table = table;
+		this.tableOfOrder = table;
 		this.waiter = waiter;
 		this.menuItems = menuItems;
 		this.placedAt = new Date();
 		this.completed = false;
+	}
+
+	public Orders() {}
+
+	public Orders(String table, Waiter waiter, List<MenuItem> menuItems, Float price) {
+		this.tableOfOrder = table;
+		this.waiter = waiter;
+		this.menuItems = menuItems;
+		this.placedAt = new Date((new java.util.Date()).getTime());
+		this.totalPrice = price;
 	}
 
 	public String getId(){return id;}
@@ -65,9 +71,9 @@ public class Orders {
         this.totalPrice = totalPrice;
     }
 
-    public String getTable() {return table;}
+    public String getTable() {return tableOfOrder;}
 
-	public void setTable(String table) {this.table = table;}
+	public void setTable(String table) {this.tableOfOrder = table;}
 
 	public Waiter getWaiter() {return waiter;}
 
@@ -79,7 +85,7 @@ public class Orders {
 
 	public Date getPlacedAt() {return placedAt;}
 
-	public List<MenuItem> getMenuItems() {return menuItems;} //aici cred ca ar tb lista de menu items -- cosmina
+	public List<MenuItem> getMenuItems() {return menuItems;}
 
 	public void setMenuItems(List<MenuItem> menuItems) {this.menuItems = menuItems;}
 	
@@ -99,7 +105,7 @@ public class Orders {
 		Orders orders = (Orders) o;
 		return id.equals(orders.id) &&
 				waiter.equals(orders.waiter) &&
-				table.equals(orders.table) &&
+				tableOfOrder.equals(orders.tableOfOrder) &&
 				Objects.equals(totalPrice, orders.totalPrice) &&
 				placedAt.equals(orders.placedAt) &&
 				menuItems.equals(orders.menuItems) &&
@@ -108,6 +114,6 @@ public class Orders {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, waiter, table, totalPrice, placedAt, menuItems, completed);
+		return Objects.hash(id, waiter, tableOfOrder, totalPrice, placedAt, menuItems, completed);
 	}
 }

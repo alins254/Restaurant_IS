@@ -1,14 +1,16 @@
 package restaurant.entity.menu;
 
+import restaurant.entity.orders.Orders;
 import restaurant.entity.stock.Stock;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "Menu")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class MenuItem {
     @Id
-    //@GeneratedValue(strategy=GenerationType.AUTO)
     private String id;
 
     @Column
@@ -22,6 +24,9 @@ public abstract class MenuItem {
     @JoinColumn(name="STOCK_ID")
             //@OneToOne(mappedBy = "MenuItem", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Stock stock;
+
+    @ManyToMany(mappedBy = "menuItems")
+    private List<Orders> orders = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -75,4 +80,13 @@ public abstract class MenuItem {
                 ", stock=" + stock +
                 '}';
     }
+
+    public List<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Orders> orders) {
+        this.orders = orders;
+    }
+
 }

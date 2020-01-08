@@ -4,7 +4,6 @@ import java.util.*;
 import restaurant.entity.orders.Orders;
 import restaurant.entity.table.Table;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
