@@ -6,9 +6,8 @@ import restaurant.entity.table.Table;
 import java.util.ArrayList;
 
 import restaurant.entity.orders.Orders;
-import java.util.Observable;
 
-public class TableService extends Observable {
+public class TableService {
 
 
     private Table table;
