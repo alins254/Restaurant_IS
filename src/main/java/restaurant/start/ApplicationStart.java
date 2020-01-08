@@ -28,5 +28,6 @@ public class ApplicationStart {
 		System.out.println(userService.addUser(user));
 		 */
 		TestService.test();
+
 	}
 }

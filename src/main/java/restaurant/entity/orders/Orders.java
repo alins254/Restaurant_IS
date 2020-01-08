@@ -1,9 +1,10 @@
 package restaurant.entity.orders;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
-import java.util.Observable;
 
 import restaurant.entity.menu.Menu;
 import restaurant.entity.menu.MenuItem;
@@ -43,8 +44,7 @@ public class Orders {
 		this.tableOfOrder = table;
 		this.waiter = waiter;
 		this.menuItems = menuItems;
-		this.placedAt = new Date();
-		this.completed = false;
+		this.placedAt = new Date((new java.util.Date()).getTime());
 	}
 
 	public Orders() {}
