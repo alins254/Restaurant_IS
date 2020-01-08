@@ -82,8 +82,7 @@ public class Orders {
 	public List<MenuItem> getMenuItems() {return menuItems;} //aici cred ca ar tb lista de menu items -- cosmina
 
 	public void setMenuItems(List<MenuItem> menuItems) {this.menuItems = menuItems;}
-
-
+	
 
 	public Boolean getCompleted() {
 		return completed;

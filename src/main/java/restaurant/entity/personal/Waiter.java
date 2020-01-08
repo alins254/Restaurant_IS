@@ -55,14 +55,8 @@ public class Waiter extends Personal implements Observer {
 	public void setOrders(List orders) {
 		this.orders = orders;
 	}
-
 	public void addOrder(Orders o) {
 		this.orders.add(o);
-		/*
-
-		NOTIFY CHEF
-
-		 */
 	}
 	public List getInvoices() {
 		return orders;
@@ -111,10 +105,5 @@ public class Waiter extends Personal implements Observer {
 				}
 		}
 	}
-
-	public void setInvoices(List invoices) {
-		this.orders = invoices;
-	}
-
 
 }

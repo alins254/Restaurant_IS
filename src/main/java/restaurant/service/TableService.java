@@ -1,10 +1,10 @@
 package restaurant.service;
 import restaurant.entity.menu.MenuItem;
 
+
 import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
-
 
 import java.util.ArrayList;
 
@@ -12,16 +12,9 @@ import java.util.Objects;
 import java.util.Observable;
 
 public class TableService{
-    /*
-    ----- Table is OBSERVABLE -----
-    table notifies waiter he was requested            -> requestWaiter method
-    table notifies waiter that clients left           -> leaveTable method
-    table notifies chef that a new order was placed   -> orderFood method
 
-     */
 
     private Table table;
-    //private TableRepo repo = new TableRepo();
 
     public TableService(Table table){
         this.table = table;
@@ -37,7 +30,6 @@ public class TableService{
 
     public void orderFood(Orders orderedFood){
         table.orderFood(orderedFood);
-
     }
 
     public void requestReceipt(){

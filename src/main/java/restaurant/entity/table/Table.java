@@ -1,5 +1,4 @@
 package restaurant.entity.table;
-
 import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Waiter;
 
@@ -21,7 +20,6 @@ public class Table extends Observable {
     public String getId(){return id;}
 
     public void setId(String id){this.id = id;}
-
 
     public Waiter getWaiter(){return waiter;}
 

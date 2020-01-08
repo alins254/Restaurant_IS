@@ -42,51 +42,13 @@ public class Chef extends Personal implements Observer {
 		this.orders = orders;
 	}
 
-	/*
-	//method for random order prepared
-<<<<<<< HEAD
-=======
->>>>>>> work in progress personal
-=======
->>>>>>> work in progress personal
-=======
->>>>>>> observer grosso modo
-	public void orderIsPrepared(Orders currentOrder){
-		for(Object o: orders){
-			if(o instanceof Orders){
-				if(currentOrder.equals(o)){
-					((Orders) o).setCompleted(true);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-					////////##################################################################((Orders) o).prepared();
-=======
-					((Orders) o).prepared();
->>>>>>> work in progress personal
-=======
-					((Orders) o).prepared();
->>>>>>> work in progress personal
-=======
-					////////##################################################################((Orders) o).prepared();
->>>>>>> observer grosso modo
-				}
-			}
-		}
-	}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> observer grosso modo
-	 */
-
 	@Override
 	public void update(Observable o, Object arg) {
 		if(arg == null)
 			System.out.println("NULL ORDER -- update in Chef");
 		else
 			if(arg instanceof Orders && o instanceof Table){
+
 				Orders newOrder = (Orders)arg;
 				orders.add(newOrder);
                 System.out.println("New order added in chef's list");
@@ -108,8 +70,6 @@ public class Chef extends Personal implements Observer {
 			setChanged();
 			notifyObservers(doneOrder);
 		}
-
-
 	}
 }
 
