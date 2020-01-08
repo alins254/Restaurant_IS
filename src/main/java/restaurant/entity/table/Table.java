@@ -7,7 +7,7 @@ import java.util.Observable;
 
 public class Table extends Observable {
 
-    private String id;
+    private String id = new String("masa1");
     private Waiter waiter;
     private boolean isOccupied = false;
 

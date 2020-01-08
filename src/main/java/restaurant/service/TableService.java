@@ -16,6 +16,15 @@ public class TableService extends Observable{
      */
 
     private Table table;
+
+    public Table getTable() {
+        return table;
+    }
+
+    public void setTable(Table table) {
+        this.table = table;
+    }
+
     public void orderFood(Orders orderedFood){
         table.setOccupied(true);
         setChanged();

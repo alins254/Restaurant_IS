@@ -6,6 +6,7 @@ import java.util.Objects;
 import java.util.Observable;
 
 import restaurant.entity.menu.Menu;
+import restaurant.entity.menu.MenuItem;
 import restaurant.entity.personal.Waiter;
 
 //import javax.persistence.*;
@@ -32,7 +33,7 @@ public class Orders {
 
 //	@ManyToMany(mappedBy = "order",fetch = FetchType.EAGER)
 //	@Transient
-	private List<Menu> menuItems;
+	private List<MenuItem> menuItems;
 	/*
 	astea nu sunt instantiate in constructor, o sa-mi dea eroare (zic eu) cand o sa fac
 	getMenuItems in invoice
@@ -42,7 +43,7 @@ public class Orders {
 
 	public Orders() {}
 
-	public Orders(String table, Waiter waiter, List<Menu> menuItems) {
+	public Orders(String table, Waiter waiter, List<MenuItem> menuItems) {
 		this.table = table;
 		this.waiter = waiter;
 		this.menuItems = menuItems;
@@ -52,7 +53,19 @@ public class Orders {
 
 	public String getId(){return id;}
 
-	public String getTable() {return table;}
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Float getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Float totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getTable() {return table;}
 
 	public void setTable(String table) {this.table = table;}
 
@@ -66,9 +79,9 @@ public class Orders {
 
 	public Date getPlacedAt() {return placedAt;}
 
-	public List<Menu> getMenuItems() {return menuItems;} //aici cred ca ar tb lista de menu items -- cosmina
+	public List<MenuItem> getMenuItems() {return menuItems;} //aici cred ca ar tb lista de menu items -- cosmina
 
-	public void setMenuItems(List<Menu> menuItems) {this.menuItems = menuItems;}
+	public void setMenuItems(List<MenuItem> menuItems) {this.menuItems = menuItems;}
 
 	/*
 	public void prepared(){
