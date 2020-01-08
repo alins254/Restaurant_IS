@@ -1,5 +1,6 @@
 package restaurant.entity.table;
 
+import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Waiter;
 
 import java.util.Objects;
@@ -29,6 +30,26 @@ public class Table extends Observable {
     public boolean getOccupied() {return isOccupied;}
 
     public void setOccupied(boolean occupied) {isOccupied = occupied;}
+
+    public void orderFood(Orders orderedFood){
+        this.setOccupied(true);
+        setChanged();
+        notifyObservers(orderedFood); //chef?
+
+    }
+
+
+    public void leaveTable(){
+        this.setOccupied(false);
+        setChanged();
+        notifyObservers(new String("left"));
+    }
+
+    public void requestWaiter(){
+        this.setOccupied(true);
+        setChanged();
+        notifyObservers(new String("request"));
+    }
 
     @Override
     public boolean equals(Object o) {

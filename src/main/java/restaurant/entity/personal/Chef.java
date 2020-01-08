@@ -5,6 +5,8 @@ import restaurant.entity.orders.Orders;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
+
+import restaurant.entity.table.Table;
 import restaurant.service.TableService;
 
 import java.util.*;
@@ -84,7 +86,7 @@ public class Chef extends Personal implements Observer {
 		if(arg == null)
 			System.out.println("NULL ORDER -- update in Chef");
 		else
-			if(arg instanceof Orders && o instanceof TableService){
+			if(arg instanceof Orders && o instanceof Table){
 				Orders newOrder = (Orders)arg;
 				orders.add(newOrder);
                 System.out.println("New order added in chef's list");

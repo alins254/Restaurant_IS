@@ -91,7 +91,7 @@ public class Waiter extends Personal implements Observer {
 		if (arg == null) {
 			System.out.println("NULL STRING -- update in Waiter");
 		} else {
-			if(arg instanceof String && o instanceof TableService){
+			if(arg instanceof String && o instanceof Table){
 				String message = (String)arg;
 				if(message.toLowerCase().equals("left"))
 					System.out.println("Thank you! Goodbye!");

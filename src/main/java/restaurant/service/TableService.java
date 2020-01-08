@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Observable;
 
-public class TableService extends Observable{
+public class TableService{
     /*
     ----- Table is OBSERVABLE -----
     table notifies waiter he was requested            -> requestWaiter method
@@ -36,9 +36,7 @@ public class TableService extends Observable{
     }
 
     public void orderFood(Orders orderedFood){
-        table.setOccupied(true);
-        setChanged();
-        notifyObservers(orderedFood); //chef?
+        table.orderFood(orderedFood);
 
     }
 
@@ -48,15 +46,11 @@ public class TableService extends Observable{
     }
 
     public void leaveTable(){
-        table.setOccupied(false);
-        setChanged();
-        notifyObservers(new String("left"));
+        table.leaveTable();
     }
 
     public void requestWaiter(){
-        table.setOccupied(true);
-        setChanged();
-        notifyObservers(new String("request"));
+        table.requestWaiter();
     }
 
     public ArrayList<MenuItem> showAllMenuItems(){
