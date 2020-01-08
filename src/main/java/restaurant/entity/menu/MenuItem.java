@@ -5,6 +5,7 @@ import restaurant.entity.stock.Stock;
 import javax.persistence.*;
 
 @Entity(name = "Menu")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class MenuItem {
     @Id
     //@GeneratedValue(strategy=GenerationType.AUTO)
@@ -63,5 +64,16 @@ public abstract class MenuItem {
 
     public void setStock(Stock stock) {
         this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", type='" + type + '\'' +
+                ", stock=" + stock +
+                '}';
     }
 }

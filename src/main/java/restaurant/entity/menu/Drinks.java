@@ -1,6 +1,11 @@
 package restaurant.entity.menu;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Drinks extends MenuItem{
+
+    public Drinks(){};
 
     public Drinks(String name, Float price){
         this.setName(name);

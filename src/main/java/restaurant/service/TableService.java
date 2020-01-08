@@ -1,8 +1,10 @@
 package restaurant.service;
+import restaurant.entity.menu.MenuItem;
 import restaurant.entity.orders.Orders;
 import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Observable;
 
@@ -16,10 +18,17 @@ public class TableService extends Observable{
      */
 
     private Table table;
+    //private TableRepo repo = new TableRepo();
+
+    public TableService(Table table){
+        this.table = table;
+    }
+
     public void orderFood(Orders orderedFood){
         table.setOccupied(true);
         setChanged();
         notifyObservers(orderedFood); //chef?
+        //repo.addOrder(orderedFood)
     }
 
     public void requestReceipt(){
@@ -37,5 +46,12 @@ public class TableService extends Observable{
         table.setOccupied(true);
         setChanged();
         notifyObservers(new String("request"));
+    }
+
+    public ArrayList<MenuItem> showAllMenuItems(){
+        ArrayList<MenuItem> accounts = null ;//= (ArrayList<MenuItem>) repo.showAllMenuItems();
+        if(accounts == null)
+            return new ArrayList<MenuItem>();
+        return accounts;
     }
 }

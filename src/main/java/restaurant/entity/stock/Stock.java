@@ -10,17 +10,13 @@ import java.util.List;
 @Entity
 public class Stock {
     @Id
-    //@GeneratedValue(strategy= GenerationType.AUTO)
     private String id;
-
-    @OneToOne(mappedBy = "stock")//(fetch = FetchType.EAGER)
-    //@JoinColumn(name = "menu_id")
-    private MenuItem menuItem;
 
     @Column
     private Integer quantity;
-    
-    public Stock(){};
+
+    @OneToOne(mappedBy = "stock", cascade = CascadeType.ALL)
+    private MenuItem menuItem;
 
     public Stock(){};
 
