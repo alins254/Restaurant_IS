@@ -2,7 +2,7 @@ package restaurant.entity.personal;
 
 import java.util.*;
 
-import restaurant.entity.orders.Orders;
+import restaurant.entity.orders.OrdersTable;
 import restaurant.entity.table.Table;
 
 import javax.persistence.Entity;
@@ -33,7 +33,7 @@ public class Waiter extends Personal implements Observer {
 		super.setDateOfEmployment(new Date());
 		//setType("waiter");
 		tables = new ArrayList<Table>();
-		orders = new ArrayList<Orders>();
+		orders = new ArrayList<OrdersTable>();
 	}
 
 	public List getTables() {
@@ -52,7 +52,7 @@ public class Waiter extends Personal implements Observer {
 		this.orders = invoices;
 	}
 
-	public void addOrder(Orders o){
+	public void addOrder(OrdersTable o){
 		this.orders.add(o);
 		/*
 
@@ -68,11 +68,11 @@ public class Waiter extends Personal implements Observer {
 				if(t.equals(table))
 					thisTable = (Table)t;
 		}
-		Orders thisOrder = new Orders();
+		OrdersTable thisOrder = new OrdersTable();
 		for(Object o: this.orders){
-			if(o instanceof Orders)
-				if(((Orders) o).getTable().equals(thisTable.getId()))
-					thisOrder = (Orders)o;
+			if(o instanceof OrdersTable)
+				if(((OrdersTable) o).getTable().equals(thisTable.getId()))
+					thisOrder = (OrdersTable)o;
 		}
 		Invoice i = new Invoice();
 		i.generate(thisOrder);
@@ -91,11 +91,11 @@ public class Waiter extends Personal implements Observer {
 					if(message.toLowerCase().equals("request"))
 						System.out.println("On my way!");
 			}else
-				if(arg instanceof Orders){
-					Orders doneOrder = (Orders)arg;
+				if(arg instanceof OrdersTable){
+					OrdersTable doneOrder = (OrdersTable)arg;
 					for(Object ord : orders)
-						if(ord instanceof Orders)
-							if(((Orders)ord).equals(doneOrder))
+						if(ord instanceof OrdersTable)
+							if(((OrdersTable)ord).equals(doneOrder))
 								orders.remove(doneOrder);
 				}
 		}

@@ -1,6 +1,7 @@
 package restaurant.start;
 
 import restaurant.entity.menu.MenuItem;
+
 import restaurant.entity.personal.Personal;
 import restaurant.entity.personal.Waiter;
 import restaurant.service.AdministratorService;
@@ -14,7 +15,6 @@ public class ApplicationStart {
 
 //		AdministratorService administratorService = new AdministratorService();
 //		Personal p = administratorService.createNewPersonal("M", 32.0, "waiter");
-//		administratorService.addNewUser("waiter123", "waiter123", p);
 //		UserService userService = new UserService();
 //		User user = new User();
 //		user.setAge(18);

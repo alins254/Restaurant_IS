@@ -1,5 +1,4 @@
 package restaurant.service;
-
 import restaurant.entity.menu.MenuItem;
 import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
