@@ -6,11 +6,13 @@ import restaurant.entity.table.Table;
 import java.util.ArrayList;
 
 import restaurant.entity.orders.Orders;
+import restaurant.repository.TableRepo;
 
 public class TableService {
 
 
     private Table table;
+    private TableRepo repo = new TableRepo();
 
     public TableService(Table table){
         this.table = table;
@@ -42,7 +44,7 @@ public class TableService {
     }
 
     public ArrayList<MenuItem> showAllMenuItems(){
-        ArrayList<MenuItem> accounts = null ;//= (ArrayList<MenuItem>) repo.showAllMenuItems();
+        ArrayList<MenuItem> accounts = (ArrayList<MenuItem>) repo.showAllMenuItems();
         if(accounts == null)
             return new ArrayList<MenuItem>();
         return accounts;

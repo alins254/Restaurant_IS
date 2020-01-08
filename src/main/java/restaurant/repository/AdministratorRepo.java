@@ -114,12 +114,6 @@ public class AdministratorRepo {
     }
 
     public ArrayList<MenuItem> showAllMenuItems(){
-        EntityManager em = entityManagerFactory.createEntityManager();
-        em.getTransaction().begin();
-        Query query = em.createQuery("SELECT m FROM Menu m");
-        em.getTransaction().commit();
-        ArrayList<MenuItem> m = (ArrayList<MenuItem>) query.getResultList();
-        em.close();
-        return m;
+        return new TableRepo().showAllMenuItems();
     }
 }

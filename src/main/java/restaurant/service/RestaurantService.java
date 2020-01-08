@@ -1,5 +1,6 @@
 package restaurant.service;
 
+import restaurant.entity.personal.Chef;
 import restaurant.entity.personal.Waiter;
 import restaurant.entity.table.Table;
 
@@ -7,8 +8,11 @@ import java.util.ArrayList;
 
 public class RestaurantService {
 
-    private ArrayList<Table> tables;
-    private ArrayList<Waiter> activeWaiters = new ArrayList<Waiter>();
+    private static ArrayList<Table> tables;
+    private static ArrayList<Waiter> activeWaiters = new ArrayList<Waiter>();
+    private static Chef chef = null;
+
+    public RestaurantService(){}
 
     public RestaurantService(int numberOfTables){
         if(numberOfTables<=0)
@@ -25,7 +29,7 @@ public class RestaurantService {
         return tables;
     }
 
-    public void assignTables(Waiter waiter){
+    public static void assignTables(Waiter waiter){
         ArrayList<Table> t = new ArrayList<>();
         if(!activeWaiters.contains(waiter))
             activeWaiters.add(waiter);
@@ -40,14 +44,25 @@ public class RestaurantService {
         waiter.setTables(t);
     }
 
-    public void removeWaiter(Waiter waiter){
+    public static void removeWaiter(Waiter waiter){
         if(!activeWaiters.contains(waiter))
             return;
         for(Table table:(ArrayList<Table>)waiter.getTables()){
             table.setWaiter(null);
-
+            activeWaiters.remove(waiter);
         }
     }
 
+    public void setChef(Chef chef){
+        this.chef=chef;
+        for(Table t:tables)
+            t.addObserver(chef);
+    }
 
+    public void removeChef(){
+        if(chef == null)
+            return;
+        for(Table t:tables)
+            t.deleteObserver(chef);
+    }
 }
