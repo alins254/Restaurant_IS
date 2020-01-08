@@ -13,6 +13,9 @@ public class Stock {
     private String id;
 
     @Column
+    private Integer menuId;
+
+    @Column
     private Integer quantity;
 
     @OneToOne(mappedBy = "stock", cascade = CascadeType.ALL)

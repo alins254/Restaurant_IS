@@ -44,8 +44,11 @@ public class AdministratorRepo {
          * Declaram operatia sau operatiile ce se vor face pe BD.
          */
         Account acc = entityManager.find(Account.class, account.getUsername());
-        if(acc != null)
+        if(acc != null){
+            entityManager.getTransaction().commit();
+            entityManager.close();
             return "Username already exists!";
+        }
         entityManager.merge(account);
         entityManager.merge(personal);
         /**

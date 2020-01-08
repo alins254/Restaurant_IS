@@ -3,9 +3,7 @@ package restaurant.entity.personal;
 import java.util.*;
 import restaurant.entity.orders.Orders;
 import restaurant.entity.table.Table;
-import restaurant.service.TableService;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
@@ -37,7 +35,6 @@ public class Waiter extends Personal implements Observer {
 		//setType("waiter");
 		tables = new ArrayList<Table>();
 		orders = new ArrayList<Orders>();
-
 	}
 
 	public List getTables() {
@@ -101,7 +98,6 @@ public class Waiter extends Personal implements Observer {
                             orders.remove(doneOrder);
                             break;
                         }
-
 				}
 		}
 	}
