@@ -16,6 +16,7 @@ import java.util.*;
 
 public class AdminViewController implements Initializable {
     private double x, y;
+    private EntryViewController mainController;
 
     private String name = "";
     private String username = "";
@@ -166,5 +167,13 @@ public class AdminViewController implements Initializable {
         btnCreateUser.setDisable(!isValid);
         roleChoice.getItems().addAll(roleList);
         roleChoice.setValue(roleList.get(0));
+    }
+
+    public EntryViewController getMainController() {
+        return mainController;
+    }
+
+    public void setMainController(EntryViewController mainController) {
+        this.mainController = mainController;
     }
 }

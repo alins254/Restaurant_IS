@@ -11,6 +11,7 @@ import java.util.*;
 
 public class ChefViewController implements Initializable {
     private double x, y;
+    private EntryViewController mainController;
 
     //top bar methods
     @FXML
@@ -62,5 +63,13 @@ public class ChefViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
+    }
+
+    public EntryViewController getMainController() {
+        return mainController;
+    }
+
+    public void setMainController(EntryViewController mainController) {
+        this.mainController = mainController;
     }
 }

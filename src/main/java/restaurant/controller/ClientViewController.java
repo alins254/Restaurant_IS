@@ -19,6 +19,7 @@ import restaurant.entity.menu.Menu;
 public class ClientViewController implements Initializable {
     private double x, y;
     private boolean hasOrdered = false;
+    private EntryViewController mainController;
 
     @FXML private VBox mainBox;
     @FXML private TextField username;
@@ -120,5 +121,13 @@ public class ClientViewController implements Initializable {
     }
 
     public void addMenuItems(List<Menu> menuItemsList) {
+    }
+
+    public EntryViewController getMainController() {
+        return mainController;
+    }
+
+    public void setMainController(EntryViewController mainController) {
+        this.mainController = mainController;
     }
 }

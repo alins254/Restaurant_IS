@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class AdministratorService {
-
     private AdministratorRepo repo = new AdministratorRepo();
 
     public Personal createNewPersonal(String name, Double salary, String type){

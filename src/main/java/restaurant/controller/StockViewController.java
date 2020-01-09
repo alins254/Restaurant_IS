@@ -21,6 +21,8 @@ public class StockViewController implements Initializable {
     private Double price = 0.0;
     private Double quantity = 0.0;
     private List<String> typeList = new ArrayList<>(Arrays.asList("dish","drink"));
+    private EntryViewController mainController;
+
 
     @FXML private Pane buttonsPane;
     @FXML private Pane tablePane;
@@ -171,5 +173,13 @@ public class StockViewController implements Initializable {
         btnCreateItem.setDisable(!isValid);
         typeChoice.getItems().addAll(typeList);
         typeChoice.setValue(typeList.get(0));
+    }
+
+    public EntryViewController getMainController() {
+        return mainController;
+    }
+
+    public void setMainController(EntryViewController mainController) {
+        this.mainController = mainController;
     }
 }
