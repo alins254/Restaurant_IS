@@ -8,12 +8,19 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import restaurant.entity.personal.Chef;
+import restaurant.entity.personal.Personal;
+import restaurant.entity.personal.Waiter;
+import restaurant.service.LoginService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginViewController implements Initializable {
     private double x, y;
+    private LoginService loginService = new LoginService();
+    private EntryViewController mainController;
+
 
     @FXML TextField username;
     @FXML PasswordField password;
@@ -46,12 +53,42 @@ public class LoginViewController implements Initializable {
 
     @FXML
     public void onLogin(MouseEvent event){
-        System.out.println("Success login! Welcome back " + username.getText());
-        username.setText("");
-        password.setText("");
+        if (username.getText().equals("")!=true && password.getText().equals("")!=true){
+            Personal p = loginService.checkAccount(username.getText(), password.getText());
+            if (p != null) {
+                System.out.println("Succes");
+                username.setText("");
+                password.setText("");
+                if (p instanceof Waiter) {
+                    mainController.initializeWaiterView();
+                    onCloseWindow(event);
+                } else if ( p instanceof Chef) {
+                    mainController.initializeChefView();
+                    onCloseWindow(event);
+                }
+            } else if (username.getText().equals("admin") == true && password.getText().equals("admin") == true){
+                System.out.println("Succes");
+                username.setText("");
+                password.setText("");
+                mainController.initializeAdminView();
+                onCloseWindow(event);
+            } else {
+                System.out.println("Credentiale nereusite");
+            }
+        } else {
+            System.out.println("Ambele sunt necesare");
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
+    }
+
+    public EntryViewController getMainController() {
+        return mainController;
+    }
+
+    public void setMainController(EntryViewController mainController) {
+        this.mainController = mainController;
     }
 }

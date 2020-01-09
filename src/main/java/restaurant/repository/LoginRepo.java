@@ -28,7 +28,7 @@ public class LoginRepo {
             return null;
         }
         em.getTransaction().begin();
-        Query q = em.createQuery("SELECT p FROM Personal p WHERE ACCOUNT_ID = " + account.getUsername());
+        Query q = em.createQuery("SELECT p FROM Personal p WHERE ACCOUNT_ID = " + "'" + account.getUsername() + "'");
         em.getTransaction().commit();
         Personal person = (Personal) q.getResultList().get(0);
         em.close();

@@ -14,6 +14,7 @@ import java.util.*;
 public class WaiterViewController implements Initializable {
     private double x, y;
     private Map<Integer, Button> tablesMap = new HashMap<Integer, Button>();
+    private EntryViewController mainController;
 
     @FXML private Button waiterT1;
     @FXML private Button waiterT2;
@@ -130,4 +131,11 @@ public class WaiterViewController implements Initializable {
 
     }
 
+    public EntryViewController getMainController() {
+        return mainController;
+    }
+
+    public void setMainController(EntryViewController mainController) {
+        this.mainController = mainController;
+    }
 }
